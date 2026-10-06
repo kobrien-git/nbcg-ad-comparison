@@ -1,0 +1,1239 @@
+<!doctype html>
+<html lang="en-IE">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>NBCG International AD Siting and Community Protections</title>
+<style>
+:root {
+  color-scheme: light;
+  --ink: #17332c;
+  --muted: #52635e;
+  --paper: #f7faf8;
+  --surface: #ffffff;
+  --forest: #174f42;
+  --leaf: #2f7461;
+  --sage: #dcebe5;
+  --line: #a9beb6;
+  --gold: #765514;
+  --gold-bg: #fff4ce;
+  --blue: #0c5275;
+  --blue-bg: #e2f2fa;
+  --violet: #573d75;
+  --violet-bg: #f0e8f7;
+  --red: #7a2e2e;
+  --red-bg: #fbe9e7;
+  --focus: #f4b400;
+  --shadow: 0 0.4rem 1.2rem rgba(19, 54, 44, 0.10);
+  font-family: Aptos, "Segoe UI", Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.55;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--ink); background: var(--paper); }
+a { color: #005a83; text-decoration-thickness: 0.09em; text-underline-offset: 0.16em; overflow-wrap: anywhere; }
+a:hover { color: #003f5e; }
+a:focus-visible, button:focus-visible, summary:focus-visible { outline: 4px solid var(--focus); outline-offset: 3px; }
+.skip-link { position: absolute; left: 1rem; top: -5rem; z-index: 100; padding: 0.8rem 1rem; background: #fff; color: #000; border: 3px solid #000; }
+.skip-link:focus { top: 1rem; }
+.site-header { background: linear-gradient(120deg, #123c33, #236a58); color: #fff; padding: 3.1rem max(1rem, calc((100% - 78rem) / 2)); }
+.site-header .eyebrow { margin: 0 0 0.7rem; font-size: 0.82rem; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: #d7efe6; }
+.site-header h1 { max-width: 18ch; margin: 0; font-size: clamp(2rem, 6vw, 4.4rem); line-height: 1.02; letter-spacing: -0.035em; }
+.site-header .thesis { max-width: 58rem; margin: 1.3rem 0 0; font-size: clamp(1.05rem, 2.2vw, 1.35rem); color: #f3fbf8; }
+.meta { display: flex; flex-wrap: wrap; gap: 0.6rem 1.1rem; margin-top: 1.5rem; font-size: 0.92rem; }
+.meta span { padding: 0.35rem 0.65rem; border: 1px solid rgba(255,255,255,0.45); border-radius: 0.35rem; background: rgba(255,255,255,0.08); }
+.context-strip { background: #e4f1ec; border-bottom: 1px solid var(--line); }
+.context-grid { max-width: 78rem; margin: 0 auto; padding: 1rem; display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+.context-grid strong { display: block; color: var(--forest); }
+.page-nav { position: sticky; top: 0; z-index: 20; background: rgba(255,255,255,0.97); border-bottom: 1px solid var(--line); box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+.page-nav ul { max-width: 78rem; margin: 0 auto; padding: 0.45rem 1rem; display: flex; flex-wrap: wrap; gap: 0.3rem; list-style: none; }
+.page-nav a { display: inline-block; min-height: 44px; padding: 0.62rem 0.75rem; white-space: nowrap; color: var(--ink); text-decoration: none; border-radius: 0.35rem; font-weight: 700; }
+.page-nav a:hover { background: var(--sage); }
+main { max-width: 78rem; margin: 0 auto; padding: 1rem; }
+section { scroll-margin-top: 5.5rem; margin: 2.8rem 0; }
+h2 { margin: 0 0 0.8rem; font-size: clamp(1.55rem, 3vw, 2.3rem); line-height: 1.12; color: var(--forest); }
+h3 { margin: 1.45rem 0 0.55rem; font-size: 1.25rem; line-height: 1.2; color: #275e51; }
+h4 { margin: 1rem 0 0.35rem; font-size: 1rem; color: var(--forest); }
+p { max-width: 78ch; }
+.lead { font-size: 1.13rem; }
+.intro-lead { font-size: 1.22rem; line-height: 1.6; color: #1d4035; max-width: 70ch; }
+.intro-story p { max-width: 72ch; }
+.intro-story p + p { margin-top: 0.9rem; }
+.pull-point { margin: 1.4rem 0; padding: 1.1rem 1.3rem; border-left: 0.5rem solid var(--leaf); background: var(--sage); border-radius: 0.5rem; font-size: 1.08rem; font-weight: 600; color: #16463a; max-width: 72ch; }
+.roadmap { margin: 1.4rem 0 0; padding: 1.2rem 1.3rem; border: 1px solid var(--line); border-radius: 0.6rem; background: var(--surface); box-shadow: var(--shadow); }
+.roadmap h3 { margin-top: 0; }
+.roadmap ol { margin: 0.4rem 0 0; padding-left: 1.3rem; }
+.roadmap li { margin: 0.45rem 0; max-width: 72ch; }
+.roadmap li strong { color: var(--forest); }
+.section-intro { margin: 0 0 1rem; font-size: 1.05rem; color: var(--muted); font-style: italic; max-width: 76ch; }
+.exec-summary { margin: 1.2rem 0; padding: 1.4rem 1.5rem; border: 1px solid var(--line); border-left: 0.5rem solid var(--forest); border-radius: 0.6rem; background: var(--surface); box-shadow: var(--shadow); }
+.exec-summary h3 { margin: 1.2rem 0 0.4rem; color: var(--forest); font-size: 1.08rem; }
+.exec-summary h3:first-of-type { margin-top: 0.4rem; }
+.exec-summary ol, .exec-summary ul { margin: 0.3rem 0; padding-left: 1.3rem; }
+.exec-summary li { margin: 0.4rem 0; max-width: 74ch; }
+.matrix-wrap { overflow-x: auto; margin: 1rem 0; border: 1px solid var(--line); border-radius: 0.55rem; background: #fff; }
+.matrix { width: 100%; min-width: 88rem; border-collapse: collapse; font-size: 0.86rem; }
+.matrix caption { padding: 0.9rem; text-align: left; font-weight: 800; color: var(--forest); background: #eef6f3; }
+.matrix th, .matrix td { padding: 0.6rem 0.7rem; border: 1px solid #c7d5d0; text-align: left; vertical-align: top; }
+.matrix thead th { background: #dcebe5; color: #173e35; }
+.matrix tbody th { position: sticky; left: 0; z-index: 1; background: #f0f6f3; color: #173e35; white-space: nowrap; }
+.matrix tbody tr:nth-child(even) td { background: #f6f9f8; }
+.mx { display: inline-block; font-weight: 800; font-size: 0.78rem; padding: 0.1rem 0.42rem; border-radius: 99rem; border: 1px solid currentColor; white-space: nowrap; }
+.mx-specific { color: #174f42; background: #dcebe5; }
+.mx-general { color: #32566a; background: #e2f2fa; }
+.mx-unverified { color: #5d4a68; background: #f0e8f7; }
+.matrix td small { display: block; margin-top: 0.25rem; color: var(--muted); font-size: 0.8rem; }
+.matrix-key { margin: 0.6rem 0 0; font-size: 0.9rem; }
+.matrix-key .mx { margin-right: 0.3rem; }
+.lifecycle-grid { counter-reset: lifecycle; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; padding: 0; list-style: none; }
+.lifecycle-step { counter-increment: lifecycle; position: relative; min-width: 0; padding: 1.1rem; border: 1px solid var(--line); border-top: 0.45rem solid var(--leaf); border-radius: 0.6rem; background: var(--surface); box-shadow: var(--shadow); }
+.lifecycle-step::before { content: counter(lifecycle); display: inline-grid; place-items: center; width: 2rem; height: 2rem; margin-bottom: 0.5rem; border-radius: 50%; color: #fff; background: var(--forest); font-weight: 800; }
+.lifecycle-step h3 { margin: 0 0 0.45rem; }
+.lifecycle-step p { margin: 0.45rem 0; }
+.chain-note { padding: 1rem 1.15rem; border: 2px solid var(--forest); border-radius: 0.55rem; background: #eef6f3; font-weight: 700; }
+.decision-grid { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 0.8rem; counter-reset: decisions; padding: 0; list-style: none; }
+.decision-card { counter-increment: decisions; min-width: 0; padding: 1rem; border: 1px solid var(--line); border-top: 0.4rem solid var(--violet); border-radius: 0.55rem; background: var(--surface); box-shadow: var(--shadow); }
+.decision-card h3 { margin-top: 0; }
+.decision-card h3::before { content: counter(decisions) ". "; }
+.proposed-tool { border: 3px solid var(--violet); }
+.tool-label { display: inline-block; padding: 0.35rem 0.55rem; border: 2px solid currentColor; color: var(--violet); background: #fff; font-weight: 900; letter-spacing: 0.02em; }
+.checklist-meta { display: flex; gap: 2rem; margin: 1rem 0; }
+.checklist-meta span { flex: 1; min-width: 12rem; padding-bottom: 0.35rem; border-bottom: 1px solid #333; }
+.checklist { min-width: 76rem; }
+.checklist th:nth-child(2), .checklist th:nth-child(3), .checklist td:nth-child(2), .checklist td:nth-child(3) { width: 9rem; text-align: center; }
+.check-box { display: inline-block; width: 1.25rem; height: 1.25rem; border: 2px solid #333; vertical-align: middle; }
+.case-lessons { display: grid; gap: 1rem; }
+.case-lesson { padding: 1.1rem; border: 1px solid var(--line); border-left: 0.45rem solid var(--leaf); border-radius: 0.55rem; background: var(--surface); box-shadow: var(--shadow); }
+.case-lesson h3 { margin-top: 0; }
+.lesson-fields { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; margin: 0; }
+.lesson-fields > div { padding: 0.75rem; background: #f4f8f6; }
+.lesson-fields dt { font-weight: 800; color: var(--forest); }
+.lesson-fields dd { margin: 0.3rem 0 0; }
+.status-box, .caution-box, .recommendation-box { margin: 1rem 0; padding: 1rem 1.15rem; border-radius: 0.55rem; border-left: 0.45rem solid var(--forest); background: var(--surface); box-shadow: var(--shadow); }
+.caution-box { border-left-color: var(--gold); background: var(--gold-bg); }
+.recommendation-box { border-left-color: var(--violet); background: var(--violet-bg); }
+.badge { display: inline-block; margin: 0 0.25rem 0.3rem 0; padding: 0.22rem 0.5rem; border-radius: 99rem; border: 1px solid currentColor; font-size: 0.78rem; line-height: 1.25; font-weight: 800; vertical-align: middle; }
+.badge.fact { color: #144f3e; background: #e2f3ea; }
+.badge.inference { color: var(--blue); background: var(--blue-bg); }
+.badge.option { color: var(--gold); background: var(--gold-bg); }
+.badge.recommendation { color: var(--violet); background: var(--violet-bg); }
+.badge.gap { color: var(--red); background: var(--red-bg); }
+.legend-grid, .card-grid, .tier-grid, .recommendation-grid, .case-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.legend-card, .evidence-card, .tier-card, .recommendation-card, .case-card { min-width: 0; padding: 1rem; border: 1px solid var(--line); border-radius: 0.6rem; background: var(--surface); box-shadow: var(--shadow); }
+.legend-card h3, .evidence-card h3, .tier-card h3, .recommendation-card h3, .case-card h3 { margin-top: 0; }
+.evidence-card .scope { color: var(--muted); font-size: 0.92rem; }
+.evidence-card .claims { font-family: Consolas, "Courier New", monospace; font-size: 0.83rem; color: #334e46; }
+.evidence-card .source-list { padding-left: 1.2rem; font-size: 0.88rem; }
+.filter-panel { margin: 1.2rem 0; padding: 1rem; border: 2px solid #73998c; border-radius: 0.6rem; background: #edf6f2; }
+.filter-panel h3 { margin-top: 0; }
+.filter-row { display: flex; flex-wrap: wrap; gap: 0.45rem; margin: 0.5rem 0 0.9rem; }
+.filter-row button, .reset-button { min-height: 44px; padding: 0.58rem 0.78rem; border: 2px solid #52766a; border-radius: 0.4rem; color: var(--ink); background: #fff; font: inherit; font-weight: 750; cursor: pointer; }
+.filter-row button[aria-pressed="true"] { color: #fff; background: var(--forest); border-color: var(--forest); }
+.reset-button { background: #fff4ce; border-color: #765514; }
+#result-count { margin: 0.3rem 0 0; font-weight: 800; }
+.table-wrap { overflow-x: auto; margin: 1rem 0; border: 1px solid var(--line); border-radius: 0.55rem; background: #fff; }
+table { width: 100%; min-width: 58rem; border-collapse: collapse; font-size: 0.9rem; }
+caption { padding: 0.9rem; text-align: left; font-weight: 800; color: var(--forest); background: #eef6f3; }
+th, td { padding: 0.72rem; border: 1px solid #c7d5d0; text-align: left; vertical-align: top; }
+th { background: #dcebe5; color: #173e35; }
+tbody tr:nth-child(even) { background: #f6f9f8; }
+.calculation-table { min-width: 44rem; }
+.mechanism-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 0.7rem; padding: 0; list-style: none; }
+.mechanism-list li { padding: 0.8rem; border-left: 0.3rem solid #668f81; background: #fff; }
+.issue-section { padding-top: 1rem; border-top: 2px solid #c4d5cf; }
+.issue-section .evidence-card { margin-top: 0.8rem; }
+.tier-card { border-top: 0.45rem solid var(--leaf); }
+.tier-card:nth-child(2) { border-top-color: #8a6a1f; }
+.tier-card:nth-child(3) { border-top-color: #6b416f; }
+.source-index { columns: 2; column-gap: 2rem; }
+.source-index li { break-inside: avoid; margin-bottom: 0.8rem; }
+details { margin: 0.7rem 0; border: 1px solid var(--line); border-radius: 0.5rem; background: #fff; }
+summary { min-height: 44px; padding: 0.8rem 1rem; cursor: pointer; font-weight: 800; color: var(--forest); }
+details > div { padding: 0 1rem 1rem; }
+footer { margin-top: 3rem; padding: 2rem max(1rem, calc((100% - 78rem) / 2)); color: #fff; background: #163f35; }
+footer p { margin: 0.3rem 0; }
+[hidden] { display: none !important; }
+
+/* Routed website shell and consistent content rhythm */
+a:focus-visible, button:focus-visible, summary:focus-visible, select:focus-visible, [tabindex]:focus-visible { outline: 4px solid var(--focus); outline-offset: 3px; }
+.page-nav-inner { max-width: 78rem; margin: 0 auto; padding: 0.45rem 1rem; display: flex; align-items: center; gap: 0.7rem; }
+.page-nav ul { max-width: none; margin: 0; padding: 0; flex: 1; }
+.page-nav details { position: relative; flex: 0 0 auto; margin: 0; border: 0; background: transparent; }
+.page-nav summary { min-height: 44px; padding: 0.62rem 0.75rem; border-radius: 0.35rem; color: var(--ink); }
+.page-nav details[open] summary { background: var(--sage); }
+.page-nav .detail-links { position: absolute; right: 0; width: min(22rem, calc(100vw - 2rem)); max-height: min(70vh, 34rem); overflow-y: auto; padding: 0.6rem; border: 1px solid var(--line); border-radius: 0.55rem; background: #fff; box-shadow: var(--shadow); }
+.page-nav .detail-links a { display: block; white-space: normal; }
+.reader-routes { margin: 1.2rem 0 2.6rem; }
+.reader-routes h2 { font-size: 1.15rem; }
+.route-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1rem; }
+.route-card { display: flex; flex-direction: column; min-height: 9rem; padding: 1.2rem; border: 2px solid var(--line); border-top: 0.45rem solid var(--leaf); border-radius: 0.65rem; color: var(--ink); background: var(--surface); box-shadow: var(--shadow); text-decoration: none; }
+.route-card:hover { border-color: var(--leaf); color: var(--ink); transform: translateY(-2px); }
+.route-card strong { color: var(--forest); font-size: 1.16rem; }
+.route-card span { margin-top: 0.45rem; color: var(--muted); }
+section { padding-top: 0.4rem; }
+section + section { border-top: 1px solid #d3dfda; padding-top: 2.7rem; }
+.exec-summary, .lifecycle-step, .decision-card, .evidence-card, .tier-card, .recommendation-card, .case-card, .case-lesson { border-radius: 0.7rem; }
+.evidence-disclosure { margin-top: 1rem; background: #f8fbfa; }
+.evidence-disclosure summary { color: var(--blue); }
+.evidence-disclosure .claims { margin-top: 0; }
+
+/* Progressive two-country comparison */
+.comparison-tool { margin: 1.2rem 0; padding: 1.3rem; border: 2px solid var(--leaf); border-radius: 0.75rem; background: #edf6f2; }
+.comparison-tool[hidden] { display: none !important; }
+.comparison-controls { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; max-width: 46rem; }
+.comparison-controls label { display: grid; gap: 0.35rem; font-weight: 800; }
+.comparison-controls select { min-height: 44px; width: 100%; padding: 0.55rem 2.1rem 0.55rem 0.65rem; border: 2px solid #52766a; border-radius: 0.4rem; color: var(--ink); background: #fff; font: inherit; }
+#comparison-status { margin: 0.8rem 0; font-weight: 800; }
+.selected-comparison { display: grid; gap: 0.9rem; }
+.comparison-topic { padding: 1rem; border: 1px solid var(--line); border-radius: 0.6rem; background: #fff; }
+.comparison-topic h3 { margin-top: 0; font-size: 1.05rem; }
+.comparison-pair { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.8rem; }
+.comparison-country { min-width: 0; padding: 0.8rem; border-left: 0.3rem solid var(--leaf); background: #f5f9f7; }
+.comparison-country h4 { margin-top: 0; }
+.comparison-country small { display: block; margin-top: 0.35rem; color: var(--muted); }
+#complete-comparison { margin-top: 1rem; }
+#complete-comparison .matrix-wrap { margin: 0; border: 0; border-top: 1px solid var(--line); border-radius: 0; }
+
+/* Measurable checklist */
+.checklist { min-width: 74rem; }
+.checklist th:first-child { width: 18%; }
+.checklist th:nth-child(n+2) { width: 20.5%; }
+.checklist td { font-size: 0.86rem; }
+.assessment-name { display: block; color: var(--forest); font-weight: 800; }
+.assessment-basis { display: block; margin-top: 0.45rem; color: var(--muted); font-size: 0.78rem; }
+
+@media (max-width: 1050px) {
+  .decision-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 900px) {
+  .context-grid, .legend-grid, .card-grid, .tier-grid, .recommendation-grid, .case-grid, .lifecycle-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .source-index { columns: 1; }
+}
+@media (max-width: 620px) {
+  :root { font-size: 15px; }
+  .site-header { padding-top: 2.3rem; }
+  .context-grid, .legend-grid, .card-grid, .tier-grid, .recommendation-grid, .case-grid, .mechanism-list, .lifecycle-grid, .decision-grid, .lesson-fields, .route-grid, .comparison-controls, .comparison-pair { grid-template-columns: 1fr; }
+  .page-nav { position: static; }
+  .page-nav-inner { display: block; padding: 0.5rem 0.8rem; }
+  .page-nav ul { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0.3rem; }
+  .page-nav li:last-child { grid-column: 1 / -1; }
+  .page-nav a { width: 100%; white-space: normal; }
+  .page-nav details { margin-top: 0.3rem; }
+  .page-nav summary { width: 100%; }
+  .page-nav .detail-links { position: static; width: 100%; max-height: none; box-shadow: none; }
+  .checklist-meta { display: grid; gap: 1rem; }
+  .checklist-wrap { overflow: visible; border: 0; background: transparent; }
+  .checklist { min-width: 0; display: block; }
+  .checklist thead { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0; }
+  .checklist tbody, .checklist tr, .checklist th, .checklist td { display: block; width: 100% !important; }
+  .checklist tr { margin: 0 0 1rem; border: 1px solid var(--line); border-top: 0.35rem solid var(--leaf); border-radius: 0.6rem; background: #fff; box-shadow: var(--shadow); }
+  .checklist th, .checklist td { border: 0; border-bottom: 1px solid #d7e1dd; padding: 0.8rem; }
+  .checklist td::before { content: attr(data-label); display: block; margin-bottom: 0.3rem; color: var(--forest); font-weight: 800; }
+  .checklist td:last-child { border-bottom: 0; }
+  main { padding: 0.8rem; }
+  section { margin: 2.1rem 0; }
+  section + section { padding-top: 2.1rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { scroll-behavior: auto !important; transition: none !important; animation: none !important; }
+}
+@media print {
+  @page { size: A4 landscape; margin: 12mm; }
+  :root { font-size: 9.5pt; }
+  body { color: #000; background: #fff; }
+  .skip-link, .page-nav, .filter-panel, .reader-routes, .comparison-controls, noscript { display: none !important; }
+  .comparison-tool { padding: 0; border: 0; background: #fff; }
+  .selected-comparison { display: none !important; }
+  #complete-comparison { display: block !important; border: 0; }
+  #complete-comparison > summary { display: none; }
+  .site-header { padding: 0 0 8mm; color: #000; background: #fff; border-bottom: 2px solid #174f42; }
+  .site-header .eyebrow, .site-header .thesis { color: #000; }
+  .context-strip { background: #fff; }
+  main { max-width: none; padding: 0; }
+  section { margin: 8mm 0; break-before: auto; scroll-margin-top: 0; }
+  section:first-of-type { break-before: auto; }
+  h2, h3 { break-after: avoid-page; }
+  #core-comparison, #issues, #planner-checklist { break-before: page; }
+  .evidence-card[hidden] { display: block !important; }
+  .legend-card, .evidence-card, .tier-card, .recommendation-card, .case-card, .lifecycle-step, .decision-card, .case-lesson, .status-box, .caution-box, .recommendation-box { box-shadow: none; break-inside: avoid; }
+  .card-grid, .legend-grid, .tier-grid, .recommendation-grid, .case-grid, .lifecycle-grid, .decision-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .lesson-fields { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .checklist-meta { display: flex; }
+  .matrix { min-width: 0; width: 100%; table-layout: fixed; font-size: 5.5pt; }
+  .matrix th, .matrix td { padding: 2pt; overflow-wrap: anywhere; }
+  .matrix .mx { white-space: normal; font-size: 5.2pt; }
+  .matrix td small { font-size: 5.1pt; }
+  .checklist-wrap { overflow: visible; border: 0; }
+  .checklist { min-width: 0; font-size: 6.4pt; }
+  .checklist th:first-child, .checklist td:first-child { width: 18%; }
+  .checklist th:nth-child(n+2), .checklist td:nth-child(n+2) { width: 20.5%; text-align: left; }
+  .checklist th, .checklist td { padding: 3pt; }
+  .checklist tr { break-inside: avoid; }
+  .checklist td { height: auto; }
+  .checklist thead { display: table-header-group; }
+  .tool-label { color: #000; }
+  .table-wrap { overflow: visible; border: 0; }
+  table { min-width: 0; font-size: 7.7pt; }
+  th, td { padding: 3.5pt; }
+  details { break-inside: avoid; }
+  details:not([open]) > *:not(summary) { display: block !important; }
+  details > div { display: block !important; }
+  details > summary { color: #000; }
+  a { color: #000; text-decoration: none; }
+  footer { color: #000; background: #fff; border-top: 1px solid #000; padding: 5mm 0 0; }
+}
+</style>
+</head>
+<body>
+<a class="skip-link" href="#main-content">Skip to main content</a>
+<header class="site-header">
+  <p class="eyebrow">National Biogas Concern Group</p>
+  <h1>NBCG International AD Siting and Community Protections</h1>
+  <p class="thesis">Community protection is a chain from site choice and complete evidence through assessment, consent, operation, incident response and enforcement. Good planning protects communities while giving responsible developers earlier certainty.</p>
+  <div class="meta" aria-label="Document information">
+    <span>Prepared 5 October 2026</span>
+    <span>Evidence reviewed 31 August 2026</span>
+    <span>Policy information - not legal advice</span>
+    <span>Portable offline edition</span>
+  </div>
+</header>
+<div class="context-strip">
+  <div class="context-grid">
+    <div><strong>Project remit</strong>Practical, non-statutory support for consistent local-authority assessment. [ARUP-SCOPE-001]</div>
+    <div><strong>Supporting document</strong>Due 12 October 2026. [ARUP-CORR-001]</div>
+    <div><strong>Stakeholder meeting</strong>14 October 2026, 15:30, Ballymackey. [ARUP-CORR-001]</div>
+  </div>
+</div>
+<nav class="page-nav" aria-label="Page sections">
+  <div class="page-nav-inner">
+    <ul>
+      <li><a href="#summary">Summary</a></li>
+      <li><a href="#at-a-glance">Compare countries</a></li>
+      <li><a href="#protection-lifecycle">Planning lifecycle</a></li>
+      <li><a href="#planner-checklist">Planner checklist</a></li>
+      <li><a href="#recommendations">Recommendations</a></li>
+    </ul>
+    <details>
+      <summary>Evidence and detail</summary>
+      <div class="detail-links">
+        <a href="#cases">Irish process lessons</a>
+        <a href="#legend">Methodology and how to read</a>
+        <a href="#worked-example">Worked example</a>
+        <a href="#core-comparison">Detailed country evidence</a>
+        <a href="#annex">Secondary comparator annex</a>
+        <a href="#sources">Source index</a>
+        <a href="#start-here">Why this matters</a>
+        <a href="#overview">Irish context</a>
+        <a href="#issues">Issue comparison</a>
+        <a href="#framework">Proposed Irish framework</a>
+        <a href="#policy-option">Siting policy option</a>
+        <a href="#limitations">Caveats and evidence limits</a>
+      </div>
+    </details>
+  </div>
+</nav>
+<main id="main-content" tabindex="-1">
+<nav class="reader-routes" aria-labelledby="reader-routes-heading">
+  <h2 id="reader-routes-heading">Choose your route</h2>
+  <div class="route-grid">
+    <a class="route-card" href="#summary"><strong>I have 3 minutes</strong><span>Read the executive summary and follow its link to the five decisions for Arup.</span></a>
+    <a class="route-card" href="#at-a-glance"><strong>I want to compare countries</strong><span>Select two jurisdictions and compare eight protection topics.</span></a>
+    <a class="route-card" href="#planner-checklist"><strong>I need the planning checklist</strong><span>Use the NBCG proposed validation tool for a practical evidence review.</span></a>
+  </div>
+</nav>
+<section id="start-here" aria-labelledby="start-here-heading">
+  <h2 id="start-here-heading">Why this matters</h2>
+  <div class="intro-story">
+    <p class="intro-lead">Anaerobic digestion plants take farm and food material and turn it into renewable gas. Ireland wants many more of them, and that is a reasonable national goal. The question this page is about is not whether these plants should exist, but where they are placed and how carefully that decision is made.</p>
+    <p>At an industrial scale, a single plant can take in hundreds of tonnes of material a day. That means heavy traffic on local roads, large volumes of digestate to store and spread on land, odour and air considerations, water and run-off risks, and gas safety. Put a plant in a well-chosen location with the right conditions, and these effects can be managed. Put the same plant in the wrong place, with gaps in the assessment, and the people living nearby carry the consequences for years.</p>
+    <p><span class="badge fact">Official committee finding and recommendation</span> A 2026 Oireachtas committee recorded that Ireland had no AD-specific guidance or regulation for appropriate plant locations and raised concern that there were no statutory sector-specific community-engagement guidelines. It recommended clear national rules on plant locations and engagement plans. These are committee findings and recommendations, not current Irish law. [IRL-GAP-001] <a href="https://data.oireachtas.ie/ie/oireachtas/committee/dail/34/joint_committee_on_agriculture_and_food/reports/2026/2026-06-30_report-on-anaerobic-digestion_en.pdf">Read the official Oireachtas report</a>.</p>
+    <p>That gap is why this page exists. The Department has asked Arup to prepare support guidance for planning authorities, and the National Biogas Concern Group has been invited to contribute. This page gathers how other countries in Europe and beyond handle the same decision, so the group can bring evidence rather than opinion to that conversation.</p>
+    <div class="pull-point">A clear, predictable planning system is good for communities and for responsible developers. Communities get protection and a fair hearing. Good developers get earlier certainty, fewer disputes and a stronger case for the plants that genuinely belong where they are proposed. This is the opposite of blanket opposition.</div>
+    <p>The comparison that follows is built on official legal and regulatory sources, with each key point carrying a source link so anyone can check it. Where the evidence is incomplete, we say so rather than fill the gap. Nothing here is legal advice, and no foreign distance is presented as a proven safe number. The purpose is to inform a better national conversation about getting siting right.</p>
+  </div>
+  <div class="roadmap">
+    <h3>What you will find on this page</h3>
+    <ol>
+      <li><strong>Executive summary and protection lifecycle</strong> - the central case for an integrated chain from site selection through enforcement.</li>
+      <li><strong>At-a-glance mechanism map and five decisions</strong> - a fast comparison and the priorities for the Arup meeting.</li>
+      <li><strong>How to read the evidence and worked example</strong> - labels, legal scope and the daily meaning of an industrial-scale plant.</li>
+      <li><strong>Country and issue comparisons</strong> - full official links and evidence on siting, application evidence, traffic, water, digestate, participation, operation and enforcement.</li>
+      <li><strong>Proposed Irish framework and planner checklist</strong> - practical NBCG proposals, with separation as one possible site-selection protection rather than the whole system.</li>
+      <li><strong>Detailed recommendations, Irish process lessons, caveats and sources</strong> - implementation detail and the evidence needed to test it.</li>
+    </ol>
+  </div>
+</section>
+
+<section id="summary" aria-labelledby="summary-heading">
+  <h2 id="summary-heading">Executive summary</h2>
+  <p class="section-intro">The core proposition is an integrated protection system across the full lifecycle, not a campaign for one setback number.</p>
+  <div class="exec-summary">
+    <h3>The gap</h3>
+    <p><span class="badge fact">Confirmed fact</span> Ireland has substantial general environmental controls, including route-dependent industrial emissions and best available techniques, water, nutrient and major-accident regimes. The Oireachtas committee nevertheless recorded no AD-specific national location guidance or regulation and concern about no statutory sector-specific engagement guidance. Its recommendations are not current law. [IRL-GAP-001; EU-IED-001; EU-BAT-001; EU-BAT-002; EU-WFD-001; EU-NIT-001; EU-SEV-001]</p>
+
+    <h3>What the comparison shows</h3>
+    <p><span class="badge fact">Confirmed comparison</span> Jurisdictions combine different protections at different stages. Examples include scoped siting rules in France and Germany, Denmark's AD-specific J205 application schedule, Ontario's whole-installation definition in its rural and agricultural framework, EU waste-treatment operating controls in scope, German monitoring requirements and Danish containment checks. The mechanisms are not directly equivalent and the audit does not rank their quality or outcomes. [FRA-SET-001; GER-SET-001; DEN-APP-001; ONT-DEF-001; EU-BAT-001; EU-BAT-002; GER-MON-001; DEN-WAT-001]</p>
+
+    <h3>The integrated response</h3>
+    <p><span class="badge recommendation">National Biogas Concern Group recommendation</span> Use one proportionate chain covering classification, whole-installation site suitability, application completeness, effects and participation, measurable consent conditions, operation, monitoring, complaints, incidents and enforcement. See the <a href="#protection-lifecycle">six-stage lifecycle</a>, <a href="#arup-decisions">five meeting decisions</a>, <a href="#planner-checklist">planner checklist</a> and <a href="#recommendations">detailed recommendations</a>. [NBCG-TIER-001; NBCG-APP-001; NBCG-SITE-001; NBCG-ODO-001; NBCG-TRA-001; NBCG-DIG-001; NBCG-SAF-001; NBCG-MON-001; NBCG-ENG-001; NBCG-COORD-001]</p>
+
+    <h3>The role of separation</h3>
+    <p><span class="badge option">Policy option</span> A clearly defined siting floor is one option to evaluate within site selection; it does not replace project-specific effects assessment and is not current Irish law or a scientifically proven safety threshold. <a href="#policy-option">See the siting option</a>. [NBCG-SITE-001; SCI-GAP-001]</p>
+
+    <h3>The constructive outcome</h3>
+    <p><span class="badge inference">Policy rationale</span> A complete, predictable process can identify unsuitable sites earlier and give suitable plants assessed on complete evidence clearer conditions and decisions. The aim is to protect communities while giving responsible developers earlier certainty, not to block all development.</p>
+  </div>
+</section>
+
+<section id="protection-lifecycle" aria-labelledby="lifecycle-heading">
+  <h2 id="lifecycle-heading">The six-stage protection lifecycle</h2>
+  <p class="section-intro">Community protection works across the life of a project. Each stage below separates audited examples from the proposed Irish response.</p>
+  <ol class="lifecycle-grid">
+    <li class="lifecycle-step">
+      <h3>Site selection</h3>
+      <p><strong>Purpose:</strong> establish classification, alternatives, whole-installation and receptor mapping, road feasibility, water vulnerability and cumulative effects before a site is fixed. Separation is only one possible receptor-protection screen. <a href="#policy-option">See the policy option</a>.</p>
+      <p><span class="badge fact">Scoped comparators</span> France, Germany, Denmark, the Netherlands and Ontario use different whole-installation, component, activity, safety or land-use distance mechanisms. They are not interchangeable. [FRA-SET-001; FRA-SET-002; GER-SET-001; DEN-SET-001; DEN-SET-002; NLD-SET-001; NLD-SAF-001; ONT-SET-001; ONT-SET-002; ONT-DEF-001]</p>
+      <p><span class="badge recommendation">NBCG proposal</span> Apply proportionate tiers and a whole-installation site-suitability test. [IRL-GAP-001; NBCG-TIER-001; NBCG-SITE-001]</p>
+    </li>
+    <li class="lifecycle-step">
+      <h3>Application completeness</h3>
+      <p><strong>Purpose:</strong> fix the project envelope and core evidence before substantive assessment.</p>
+      <p><span class="badge fact">Scoped comparator</span> Denmark's J205 schedule requires specified information on layout, materials, process, gas, odour, transport, digestate, containment and drainage where that route applies. [DEN-APP-001]</p>
+      <p><span class="badge recommendation">NBCG proposal</span> Use a national completeness gate and the proposed planner checklist. [NBCG-APP-001]</p>
+    </li>
+    <li class="lifecycle-step">
+      <h3>Assessment and participation</h3>
+      <p><strong>Purpose:</strong> assess effects, reasonable alternatives and cumulative effects, and enable early participation without treating different legal routes as universal.</p>
+      <p><span class="badge fact">Scoped comparators</span> Natura assessment addresses in-combination effects in its legal scope. France, Germany, Denmark and the Netherlands have participation mechanisms tied to stated routes. [EU-HAB-001; IRL-GAP-001; FRA-PUB-001; GER-PUB-001; DEN-PUB-001; NLD-PUB-001]</p>
+      <p><span class="badge recommendation">NBCG proposal</span> Engage before design is fixed and publish the response and design-change record. [NBCG-ENG-001]</p>
+    </li>
+    <li class="lifecycle-step">
+      <h3>Consent and conditions</h3>
+      <p><strong>Purpose:</strong> distinguish site and design matters that must be resolved before permission from minor details that can safely follow within a fixed assessed envelope.</p>
+      <p><span class="badge fact">Observed records</span> The two reviewed Irish cases used further information and conditions differently, but the records do not prove causation, legal error or that further information would have cured refusal grounds. [CASE-CORR-001; CASE-LIM-001; CASE-COMP-001; CASE-COMP-002]</p>
+      <p><span class="badge inference">Inference</span> A national gate should identify what must be fixed at consent stage. <span class="badge recommendation">NBCG proposal</span> [NBCG-APP-001; NBCG-COORD-001]</p>
+    </li>
+    <li class="lifecycle-step">
+      <h3>Operation and monitoring</h3>
+      <p><strong>Purpose:</strong> turn consent into measurable controls, commissioning and continuing verification.</p>
+      <p><span class="badge fact">Law, guidance and science</span> Route-dependent BAT, French odour controls, German checks and Danish odour and containment conditions provide scoped examples. Peer-reviewed studies support whole-site verification but are not law. [EU-BAT-001; EU-BAT-002; FRA-ODO-001; GER-MON-001; GER-WAT-002; DEN-ODO-001; DEN-WAT-001; SCI-MET-001; SCI-MET-002; SCI-MET-003]</p>
+      <p><span class="badge recommendation">NBCG proposal</span> Use measurable conditions, independent checks and non-confidential reporting. [NBCG-MON-001]</p>
+    </li>
+    <li class="lifecycle-step">
+      <h3>Incident response and enforcement</h3>
+      <p><strong>Purpose:</strong> provide complaint handling, incident notification, corrective action and proportionate escalation.</p>
+      <p><span class="badge fact">Scoped examples</span> Waste-treatment BAT covers emergency preparedness and odour response in scope; German water rules include incident notification, inspection and shutdown for dangerous defects. [EU-BAT-001; EU-BAT-002; GER-WAT-002]</p>
+      <p><span class="badge recommendation">NBCG proposal</span> Publish non-confidential incident and complaint outcomes and define correction, escalation and review triggers. This is not stated as a universal existing duty. [NBCG-MON-001]</p>
+    </li>
+  </ol>
+  <p class="chain-note"><span class="badge inference">Synthesis</span> Protection works as a chain. A weakness in site selection, evidence, consent, operation or enforcement is not cured by a setback at another stage.</p>
+</section>
+
+<section id="at-a-glance" aria-labelledby="glance-heading">
+  <h2 id="glance-heading">Compare two countries</h2>
+  <p class="section-intro">Choose two core jurisdictions to compare their verified mechanisms across eight protection topics. This is not a scorecard or a ranking.</p>
+  <div class="comparison-tool" id="comparison-tool" hidden>
+    <div class="comparison-controls">
+      <label for="country-a">First jurisdiction
+        <select id="country-a" name="country-a">
+          <option>Ireland</option><option>France</option><option>Germany</option><option>Denmark</option><option>Netherlands</option><option>Ontario</option>
+        </select>
+      </label>
+      <label for="country-b">Second jurisdiction
+        <select id="country-b" name="country-b">
+          <option>Ireland</option><option>France</option><option selected>Germany</option><option>Denmark</option><option>Netherlands</option><option>Ontario</option>
+        </select>
+      </label>
+    </div>
+    <p id="comparison-status" role="status" aria-live="polite"></p>
+    <div class="selected-comparison" id="selected-comparison"></div>
+  </div>
+  <noscript><p class="status-box">The two-country selector is unavailable because JavaScript is off. The complete six-country comparison matrix is shown below.</p></noscript>
+  <details id="complete-comparison" open>
+    <summary>View complete comparison matrix</summary>
+    <div class="matrix-wrap" role="region" aria-label="Complete comparative mechanism table" tabindex="0">
+    <table class="matrix">
+      <caption>Specificity of verified protection mechanisms by jurisdiction</caption>
+      <thead>
+        <tr>
+          <th scope="col">Jurisdiction</th>
+          <th scope="col">Site suitability and receptor protection</th>
+          <th scope="col">Standard application evidence</th>
+          <th scope="col">Odour and air</th>
+          <th scope="col">Digestate and water</th>
+          <th scope="col">Gas and accident safety</th>
+          <th scope="col">Traffic and transport</th>
+          <th scope="col">Community participation</th>
+          <th scope="col">Monitoring and enforcement</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Ireland</th>
+          <td><span class="mx mx-unverified">Not specifically verified</span><small>No national AD-specific location method verified. [IRL-GAP-001]</small></td>
+          <td><span class="mx mx-general">General / conditional</span><small>Planning and assessment routes apply, but no national AD schedule was verified. [IRL-GAP-001; EU-IED-001]</small></td>
+          <td><span class="mx mx-general">General / conditional</span><small>Waste-treatment BAT applies where the route is engaged. [EU-BAT-001]</small></td>
+          <td><span class="mx mx-general">General / conditional</span><small>Water and nutrient controls apply in scope; spreading rules are not plant siting. [EU-WFD-001; EU-NIT-001]</small></td>
+          <td><span class="mx mx-general">General / conditional</span><small>Major-accident scope depends on gas inventory and classification. [EU-SEV-001]</small></td>
+          <td><span class="mx mx-unverified">Not specifically verified</span><small>No AD-specific threshold verified; general planning is not absent. [SCI-GAP-001]</small></td>
+          <td><span class="mx mx-unverified">Not specifically verified</span><small>No statutory AD-specific engagement guidance verified. [IRL-GAP-001]</small></td>
+          <td><span class="mx mx-general">General / conditional</span><small>BAT monitoring and accident controls apply where in scope. [EU-BAT-002]</small></td>
+        </tr>
+        <tr>
+          <th scope="row">France</th>
+          <td><span class="mx mx-specific">AD-specific</span><small>Scoped authorisation-regime siting provisions. [FRA-SET-001; FRA-SET-002]</small></td>
+          <td><span class="mx mx-specific">AD-specific</span><small>ICPE 2781 selects an AD-specific authorisation route in the stated scope. [FRA-REG-001]</small></td>
+          <td><span class="mx mx-specific">AD-specific</span><small>Source dossier, modelling criterion and complaint response. [FRA-ODO-001]</small></td>
+          <td><span class="mx mx-specific">AD-specific</span><small>Containment, firewater and eligible digestate spreading plan. [FRA-WAT-001; FRA-WAT-002; FRA-DIG-001]</small></td>
+          <td><span class="mx mx-specific">AD-specific</span><small>Danger-study-informed receptor distances and containment in the stated route. [FRA-SET-002; FRA-WAT-002]</small></td>
+          <td><span class="mx mx-unverified">Not specifically verified</span><small>No national AD-specific traffic threshold verified. [FRA-TRA-001]</small></td>
+          <td><span class="mx mx-general">General / conditional</span><small>Environmental-authorisation participation applies to the stated route. [FRA-PUB-001]</small></td>
+          <td><span class="mx mx-specific">AD-specific</span><small>Odour complaint and abatement checks plus enforceable authorisation controls. [FRA-ODO-001]</small></td>
+        </tr>
+        <tr>
+          <th scope="row">Germany</th>
+          <td><span class="mx mx-specific">AD-specific</span><small>Scoped biological-waste treatment siting rule and odour assessment. [GER-SET-001]</small></td>
+          <td><span class="mx mx-general">General / conditional</span><small>Formal permit route depends on activity classification. [GER-REG-001]</small></td>
+          <td><span class="mx mx-specific">AD-specific</span><small>Detailed enclosure, extraction and air controls in scope. [GER-AIR-001]</small></td>
+          <td><span class="mx mx-specific">AD-specific</span><small>AD and defined JGS containment and water controls. [GER-WAT-001; GER-WAT-002]</small></td>
+          <td><span class="mx mx-specific">AD-specific</span><small>Gas alarms, leak surveys and flare records in scope. [GER-MON-001]</small></td>
+          <td><span class="mx mx-unverified">Not specifically verified</span><small>No federal AD-specific truck or route threshold verified. [GER-TRA-001]</small></td>
+          <td><span class="mx mx-general">General / conditional</span><small>Formal permit participation applies where that route is engaged. [GER-PUB-001]</small></td>
+          <td><span class="mx mx-specific">AD-specific</span><small>Gas, leak, flare and independent tightness checks in scope. [GER-MON-001; GER-WAT-002]</small></td>
+        </tr>
+        <tr>
+          <th scope="row">Denmark</th>
+          <td><span class="mx mx-general">General / conditional</span><small>Livestock-component distances are conditional, not a whole-plant rule. [DEN-SET-001; DEN-SET-002]</small></td>
+          <td><span class="mx mx-specific">AD-specific</span><small>Detailed J205 application schedule where that route applies. [DEN-APP-001]</small></td>
+          <td><span class="mx mx-specific">AD-specific</span><small>J205 odour abatement and commissioning conditions. [DEN-ODO-001]</small></td>
+          <td><span class="mx mx-specific">AD-specific</span><small>J205 containment and leak checks; nutrient route depends on classification. [DEN-WAT-001; DEN-DIG-001]</small></td>
+          <td><span class="mx mx-unverified">Not specifically verified</span><small>Full accident coverage was not completed in this audit. [DEN-GAP-001]</small></td>
+          <td><span class="mx mx-unverified">Not specifically verified</span><small>Transport disclosure is verified, but no complete traffic-control audit. [DEN-APP-001; DEN-GAP-001]</small></td>
+          <td><span class="mx mx-general">General / conditional</span><small>Participation depends on the environmental assessment or permit route. [DEN-PUB-001]</small></td>
+          <td><span class="mx mx-general">General / conditional</span><small>J205 checks are verified; the wider enforcement audit is incomplete. [DEN-ODO-001; DEN-WAT-001; DEN-GAP-001]</small></td>
+        </tr>
+        <tr>
+          <th scope="row">Netherlands</th>
+          <td><span class="mx mx-specific">AD-specific</span><small>Specified activity tables plus a separate gas-storage safety distance. [NLD-SET-001; NLD-SAF-001]</small></td>
+          <td><span class="mx mx-general">General / conditional</span><small>Activity, permit and EIA requirements depend on feedstock and route. [NLD-REG-001; NLD-IPPC-001; NLD-EIA-001]</small></td>
+          <td><span class="mx mx-general">General / conditional</span><small>General acceptable-odour duty with activity-specific tables. [NLD-ODO-001; NLD-SET-001]</small></td>
+          <td><span class="mx mx-unverified">Not specifically verified</span><small>Digestate, water and process-emission audit remains incomplete. [NLD-GAP-001]</small></td>
+          <td><span class="mx mx-specific">AD-specific</span><small>Gas-storage equipment distance, not a dwelling setback. [NLD-SAF-001]</small></td>
+          <td><span class="mx mx-unverified">Not specifically verified</span><small>No national AD-specific traffic threshold verified. [NLD-TRA-001]</small></td>
+          <td><span class="mx mx-general">General / conditional</span><small>Verified participation is tied to the stated Natura route. [NLD-PUB-001]</small></td>
+          <td><span class="mx mx-unverified">Not specifically verified</span><small>Monitoring and enforcement audit remains incomplete. [NLD-GAP-001]</small></td>
+        </tr>
+        <tr>
+          <th scope="row">Ontario</th>
+          <td><span class="mx mx-specific">AD-specific</span><small>MDS receptor distances and broad component definition in rural/agricultural scope. [ONT-SET-001; ONT-SET-002; ONT-DEF-001]</small></td>
+          <td><span class="mx mx-general">General / conditional</span><small>Approval evidence depends on RMADF or ECA route. [ONT-REG-001; ONT-ECA-001]</small></td>
+          <td><span class="mx mx-specific">AD-specific</span><small>Engineer odour plan for specified farm AD scope. [ONT-ODO-001]</small></td>
+          <td><span class="mx mx-general">General / conditional</span><small>Nutrient and environmental approvals depend on route. [ONT-REG-001; ONT-ECA-001]</small></td>
+          <td><span class="mx mx-specific">AD-specific</span><small>Agricultural-biogas safety guidance addresses methane and hydrogen sulphide. [ONT-SAF-001]</small></td>
+          <td><span class="mx mx-unverified">Not specifically verified</span><small>No province-wide AD-specific vehicle threshold verified. [ONT-TRA-001]</small></td>
+          <td><span class="mx mx-general">General / conditional</span><small>Neighbour notification and consultation depend on approval route. [ONT-ECA-001]</small></td>
+          <td><span class="mx mx-general">General / conditional</span><small>Conditions and enforcement depend on the applicable approval route. [ONT-ECA-001; ONT-ODO-001]</small></td>
+        </tr>
+      </tbody>
+    </table>
+    </div>
+  </details>
+  <p class="matrix-key"><span class="mx mx-specific">AD-specific</span> a verified mechanism specifically addresses AD or a named AD route in the stated scope. <span class="mx mx-general">General / conditional</span> protection comes through a broader law, permit, land-use context or factual trigger. <span class="mx mx-unverified">Not specifically verified</span> this audit did not verify a specific mechanism; it does not mean the topic is unregulated.</p>
+  <div class="caution-box"><strong>Important:</strong> these labels describe mechanism specificity only. They do not describe legal strength, regulatory quality, enforcement performance, environmental outcome or a jurisdiction ranking. Waste and permit routes may change with feedstock, waste or by-product status, treatment purpose and route, and co-located operations. No distance shown is a scientific safety guarantee or a universal answer. See <a href="#limitations">caveats and evidence limits</a>.</div>
+</section>
+
+<section id="arup-decisions" aria-labelledby="decisions-heading">
+  <h2 id="decisions-heading">Five decisions Arup should take</h2>
+  <p class="section-intro">These NBCG meeting priorities group the ten detailed recommendations. They add no new factual claim; the <a href="#recommendations">ten recommendations remain the implementation detail</a>.</p>
+  <ol class="decision-grid">
+    <li class="decision-card"><h3>Adopt one proportionate lifecycle framework</h3><span class="badge recommendation">NBCG recommendation</span><p>Use universal, enhanced-risk and industrial or cumulative tiers within one controlled process. [NBCG-TIER-001; NBCG-COORD-001]</p><p><a href="#protection-lifecycle">Lifecycle</a> | <a href="#framework">Framework detail</a></p></li>
+    <li class="decision-card"><h3>Set a national application-completeness gate</h3><span class="badge recommendation">NBCG recommendation</span><p>Require the fixed project envelope, core evidence and mass-balanced traffic before substantive assessment. Denmark's J205 schedule is a scoped comparator, not a template of Irish law. [DEN-APP-001; NBCG-APP-001; NBCG-TRA-001]</p><p><a href="#planner-checklist">Planner checklist</a> | <a href="#issue-application">Application evidence</a></p></li>
+    <li class="decision-card"><h3>Define site suitability and receptor protection</h3><span class="badge recommendation">NBCG recommendation</span><p>Assess whole-installation mapping, water, roads, alternatives and effects. Separation is one option, not current law or a scientific safety threshold. [NBCG-SITE-001; SCI-GAP-001]</p><p><a href="#issue-siting">Siting evidence</a> | <a href="#policy-option">Policy option</a></p></li>
+    <li class="decision-card"><h3>Make conditions measurable through operation</h3><span class="badge recommendation">NBCG recommendation</span><p>Connect odour, digestate, water, safety, commissioning, monitoring, complaints and enforcement to measurable controls. [NBCG-ODO-001; NBCG-DIG-001; NBCG-SAF-001; NBCG-MON-001]</p><p><a href="#issue-odour">Odour</a> | <a href="#issue-digestate">Digestate</a> | <a href="#issue-safety">Safety</a> | <a href="#issue-monitoring">Monitoring</a></p></li>
+    <li class="decision-card"><h3>Require early engagement and a transparent decision record</h3><span class="badge recommendation">NBCG recommendation</span><p>Engage before design is fixed and publish what evidence was accepted, refused or deferred, while preserving each authority's legal role. [NBCG-ENG-001; NBCG-COORD-001]</p><p><a href="#issue-participation">Participation</a> | <a href="#issue-coordination">Coordination</a> | <a href="#cases">Irish process lessons</a></p></li>
+  </ol>
+</section>
+
+<section id="overview" aria-labelledby="overview-heading">
+  <h2 id="overview-heading">Opening thesis and Irish context</h2>
+  <p class="section-intro">Ireland already has substantial environmental law, but no verified national AD-specific method linking classification, site selection, complete evidence, participation, consent, operation and post-consent transparency.</p>
+  <p class="lead">The policy gap is best addressed as one predictable lifecycle. Site suitability includes receptors, roads, water, alternatives and cumulative effects as well as any separation screen; later controls must then make the assessed project measurable and enforceable.</p>
+  <div class="status-box">
+    <span class="badge fact">Confirmed fact</span>
+    <p>The 2026 Oireachtas committee recorded the absence of anaerobic-digestion-specific national location guidance or regulation and concern about no statutory sector-specific community-engagement guidance. It recommended national planning rules and engagement plans. This is an official committee finding and recommendation, not binding law. [IRL-GAP-001]</p>
+    <details class="evidence-disclosure"><summary>Evidence and sources</summary><div><p><a href="https://data.oireachtas.ie/ie/oireachtas/committee/dail/34/joint_committee_on_agriculture_and_food/reports/2026/2026-06-30_report-on-anaerobic-digestion_en.pdf">https://data.oireachtas.ie/ie/oireachtas/committee/dail/34/joint_committee_on_agriculture_and_food/reports/2026/2026-06-30_report-on-anaerobic-digestion_en.pdf</a></p></div></details>
+  </div>
+  <p>The project scoping deck describes a main support document, assessment framework, planner checklist and best-practice examples. It asks about location, receptors, planning, environmental and community considerations, evidence, scale, feedstock and operation. [ARUP-SCOPE-001; ARUP-SCOPE-002] The deck is a proposed scope, not completed guidance or law.</p>
+  <div class="caution-box">
+    <strong>Central caution:</strong> A whole-installation floor, a component or activity distance, a gas-safety distance, a formula and an effects-based test are different mechanisms. No foreign number on this page is presented as a scientifically proven safe distance.
+  </div>
+</section>
+
+<section id="legend" aria-labelledby="legend-heading">
+  <h2 id="legend-heading">How to read the comparison</h2>
+  <p class="section-intro">Different countries protect communities in different ways. Before comparing them, it helps to know what kind of rule you are looking at, and how confident we are in each statement.</p>
+  <div class="legend-grid">
+    <article class="legend-card"><h3><span class="badge fact">Confirmed fact</span></h3><p>Verified in an official primary source, primary project record or audited case record. Legal weight and scope are stated.</p></article>
+    <article class="legend-card"><h3><span class="badge inference">Inference</span></h3><p>A reasoned conclusion drawn from confirmed facts. It is not law or an authority finding.</p></article>
+    <article class="legend-card"><h3><span class="badge option">Policy option</span></h3><p>A design for evaluation. It is not current Irish law and is not presented as scientifically settled.</p></article>
+    <article class="legend-card"><h3><span class="badge recommendation">National Biogas Concern Group recommendation</span></h3><p>A proposed National Biogas Concern Group safeguard, kept separate from foreign legal facts.</p></article>
+    <article class="legend-card"><h3><span class="badge gap">Evidence gap</span></h3><p>No specific rule was verified, or the audit remains incomplete. This does not mean general law is absent.</p></article>
+    <article class="legend-card"><h3>Claim IDs and URLs</h3><p>Each material legal statement carries an audited claim ID and a visible official-source URL so printed copies retain source value.</p></article>
+  </div>
+  <h3>Regulatory mechanisms in plain language</h3>
+  <ul class="mechanism-list">
+    <li><strong>Whole-installation floor:</strong> minimum between a legally defined installation and specified receptors.</li>
+    <li><strong>Component rule:</strong> distance or control applying to a named store, tank, activity or part of a plant.</li>
+    <li><strong>Gas-safety distance:</strong> external-safety separation for specified gas equipment and measurement points.</li>
+    <li><strong>Formula:</strong> separation calculated using facility and receptor characteristics within a defined scope.</li>
+    <li><strong>Effects test:</strong> site-specific assessment of odour, noise, air, water, habitats or risk.</li>
+    <li><strong>Industrial threshold:</strong> capacity point selecting a permit or procedure, not a finding of safety or harm.</li>
+    <li><strong>Best available techniques:</strong> prevention, control, monitoring and management duties within permit scope.</li>
+    <li><strong>Application schedule:</strong> a standard list of evidence that must accompany an application.</li>
+  </ul>
+</section>
+
+<section id="worked-example" aria-labelledby="worked-heading">
+  <h2 id="worked-heading">Industrial-scale worked example</h2>
+  <p class="section-intro">To make the scale real: here is what an industrial plant of the size now being proposed in Ireland means in day-to-day terms.</p>
+  <p>The 80,000 to 90,000 t/year example is illustrative. It is not the boundary of proposed guidance and does not prove legal classification.</p>
+  <div class="table-wrap">
+    <table class="calculation-table">
+      <caption>Transparent conversion under two operating assumptions</caption>
+      <thead><tr><th scope="col">Annual nameplate throughput</th><th scope="col">365-day assumption</th><th scope="col">Arithmetic</th><th scope="col">330-day assumption</th><th scope="col">Arithmetic</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">80,000 t/year</th><td>219.18 t/day</td><td>80,000 / 365 = 219.178...</td><td>242.42 t/day</td><td>80,000 / 330 = 242.424...</td></tr>
+        <tr><th scope="row">90,000 t/year</th><td>246.58 t/day</td><td>90,000 / 365 = 246.575...</td><td>272.73 t/day</td><td>90,000 / 330 = 272.727...</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p>The 365-day assumption is a full-year average. The 330-day assumption allows 35 non-operating days, so the same annual material is handled at a higher average rate on operating days.</p>
+  <div class="caution-box">
+    <span class="badge inference">Inference</span>
+    <p>These are transparent comparison calculations, not a claim about a particular plant's permitted maximum daily intake or actual operating schedule. The resulting 219.18 to 272.73 t/day range is numerically above 100 t/day, but legal Industrial Emissions Directive and waste applicability still depends on feedstock, waste or by-product status, treatment purpose and co-located operations. [EU-IED-001-WE]</p>
+    <details class="evidence-disclosure"><summary>Evidence and sources</summary><div><p><a href="https://eur-lex.europa.eu/eli/dir/2010/75/2024-08-04/eng">https://eur-lex.europa.eu/eli/dir/2010/75/2024-08-04/eng</a><br><a href="https://revisedacts.lawreform.ie/eli/1992/act/7/schedule/1/revised/en/html">https://revisedacts.lawreform.ie/eli/1992/act/7/schedule/1/revised/en/html</a></p></div></details>
+  </div>
+  <p>The proposed Irish framework covers every proposal proportionately. This example belongs in the industrial tier under either arithmetic assumption, but it is not an exemption boundary for smaller plants.</p>
+</section>
+
+<section id="core-comparison" aria-labelledby="core-heading">
+  <h2 id="core-heading">Core-country comparison</h2>
+  <p class="section-intro">Here is how six comparable jurisdictions actually handle the siting and control of these plants. Each uses its own mix of distance rules, effects tests and operating controls.</p>
+  <p>Use the optional controls to focus the evidence cards. All source content remains in the file and is visible when scripting is unavailable or when printing.</p>
+  <div class="filter-panel" id="filter-panel" hidden aria-labelledby="filter-heading">
+    <h3 id="filter-heading">Filter evidence cards</h3>
+    <span id="jurisdiction-label"><strong>Jurisdiction</strong></span>
+    <div class="filter-row" role="group" aria-labelledby="jurisdiction-label">
+      <button type="button" data-filter-jurisdiction="all" aria-pressed="true">All</button>
+      <button type="button" data-filter-jurisdiction="ireland" aria-pressed="false">Ireland</button>
+      <button type="button" data-filter-jurisdiction="france" aria-pressed="false">France</button>
+      <button type="button" data-filter-jurisdiction="germany" aria-pressed="false">Germany</button>
+      <button type="button" data-filter-jurisdiction="denmark" aria-pressed="false">Denmark</button>
+      <button type="button" data-filter-jurisdiction="netherlands" aria-pressed="false">Netherlands</button>
+      <button type="button" data-filter-jurisdiction="ontario" aria-pressed="false">Ontario</button>
+    </div>
+    <span id="topic-label"><strong>Issue</strong></span>
+    <div class="filter-row" role="group" aria-labelledby="topic-label">
+      <button type="button" data-filter-topic="all" aria-pressed="true">All</button>
+      <button type="button" data-filter-topic="siting" aria-pressed="false">Siting</button>
+      <button type="button" data-filter-topic="application" aria-pressed="false">Application evidence</button>
+      <button type="button" data-filter-topic="odour" aria-pressed="false">Odour and air</button>
+      <button type="button" data-filter-topic="traffic" aria-pressed="false">Traffic</button>
+      <button type="button" data-filter-topic="water" aria-pressed="false">Digestate and water</button>
+      <button type="button" data-filter-topic="safety" aria-pressed="false">Safety</button>
+      <button type="button" data-filter-topic="participation" aria-pressed="false">Participation</button>
+      <button type="button" data-filter-topic="monitoring" aria-pressed="false">Monitoring</button>
+    </div>
+    <button class="reset-button" type="button" id="reset-filters">Reset filters</button>
+    <p id="result-count" aria-live="polite">Showing all evidence cards.</p>
+  </div>
+  <noscript><p class="status-box">Filtering is unavailable because scripting is off. All evidence is already visible.</p></noscript>
+
+  <div class="status-box">
+    <span class="badge fact">Confirmed fact</span>
+    <p><strong>Waste and Industrial Emissions Directive scope caveat:</strong> Every waste or Industrial Emissions Directive threshold in the jurisdiction cards and table remains conditional on feedstock, waste or by-product status, treatment purpose and route, and co-located operations. Tonnage alone does not decide the legal route. [EU-IED-001]</p>
+    <details class="evidence-disclosure"><summary>Evidence and sources</summary><div><p><a href="https://eur-lex.europa.eu/eli/dir/2010/75/2024-08-04/eng">https://eur-lex.europa.eu/eli/dir/2010/75/2024-08-04/eng</a><br><a href="https://revisedacts.lawreform.ie/eli/1992/act/7/schedule/1/revised/en/html">https://revisedacts.lawreform.ie/eli/1992/act/7/schedule/1/revised/en/html</a></p></div></details>
+  </div>
+
+  <div class="card-grid" id="evidence-cards">
+    <article class="evidence-card" data-jurisdiction="ireland" data-mechanism="industrial-threshold effects-test" data-topic="siting application odour water safety participation monitoring">
+      <h3>Ireland</h3><span class="badge fact">Confirmed fact</span>
+      <p class="scope"><strong>Scope:</strong> General planning plus activity-specific environmental regimes.</p>
+      <p><strong>Headline control:</strong> 50, 75 and 100 t/day waste categories can apply after legal classification. Waste Treatment best available techniques can require odour management, monitoring and accident controls in scope. Water, nutrients, habitats, animal-by-product and gas-inventory rules add layers.</p>
+      <p><strong>Location:</strong> The audited sources did not verify a national anaerobic-digestion-specific housing floor. The Oireachtas committee recorded the policy gap.</p>
+      <p><strong>Worked example:</strong> Numerically over 100 t/day under both assumptions, but feedstock and treatment status remain decisive.</p>
+      <p><strong>Limitation:</strong> Do not confuse the planning-guidance gap with an absence of regulation.</p>
+      <details class="evidence-disclosure"><summary>Evidence and sources</summary><div><p class="claims">EU-IED-001; EU-BAT-001; EU-BAT-002; EU-WFD-001; EU-NIT-001; EU-HAB-001; EU-SEV-001; IRL-ABP-001; IRL-GAP-001</p>
+      <ul class="source-list"><li><a href="https://eur-lex.europa.eu/eli/dir/2010/75/2024-08-04/eng">https://eur-lex.europa.eu/eli/dir/2010/75/2024-08-04/eng</a></li><li><a href="https://eur-lex.europa.eu/eli/dec_impl/2018/1147/oj/eng">https://eur-lex.europa.eu/eli/dec_impl/2018/1147/oj/eng</a></li><li><a href="https://data.oireachtas.ie/ie/oireachtas/committee/dail/34/joint_committee_on_agriculture_and_food/reports/2026/2026-06-30_report-on-anaerobic-digestion_en.pdf">https://data.oireachtas.ie/ie/oireachtas/committee/dail/34/joint_committee_on_agriculture_and_food/reports/2026/2026-06-30_report-on-anaerobic-digestion_en.pdf</a></li></ul></div></details>
+    </article>
+
+    <article class="evidence-card" data-jurisdiction="france" data-mechanism="whole-installation-floor effects-test industrial-threshold" data-topic="siting application odour water traffic participation monitoring safety">
+      <h3>France</h3><span class="badge fact">Confirmed fact - mandatory law in stated scope</span>
+      <p class="scope"><strong>Scope:</strong> ICPE 2781 authorisation regime for relevant facilities.</p>
+      <p><strong>Headline control:</strong> Authorisation at 100 t/day in scope. Current Article 4 fixes at least 200 m from the installation, excluding raw-plant-only storage, to third-party dwellings and statutory traveller sites. Other listed receptor distances use impact and danger studies.</p>
+      <p><strong>Operating controls:</strong> Odour source dossier and dispersion assessment, 5 ouE/m3 for no more than 175 hours/year at stated human-occupation zones, containment, firewater and eligible digestate spreading plans.</p>
+      <p><strong>Worked example:</strong> Above 100 t/day if rubrique 2781 applies.</p>
+      <p><strong>Limitation:</strong> The 200 m sentence does not cover every public receptor and is not a scientifically safe distance. No national sector-specific traffic threshold was verified.</p>
+      <details class="evidence-disclosure"><summary>Evidence and sources</summary><div><p class="claims">FRA-REG-001; FRA-SET-001; FRA-SET-002; FRA-ODO-001; FRA-WAT-001; FRA-WAT-002; FRA-DIG-001; FRA-PUB-001; FRA-TRA-001</p>
+      <ul class="source-list"><li><a href="https://aida.ineris.fr/reglementation/2781-installation-methanisation-dechets-non-dangereux-matiere-vegetale-brute-a">https://aida.ineris.fr/reglementation/2781-installation-methanisation-dechets-non-dangereux-matiere-vegetale-brute-a</a></li><li><a href="https://aida.ineris.fr/reglementation/arrete-101109-fixant-regles-techniques-auxquelles-doivent-satisfaire-installations">https://aida.ineris.fr/reglementation/arrete-101109-fixant-regles-techniques-auxquelles-doivent-satisfaire-installations</a></li><li><a href="https://www.ecologie.gouv.fr/politiques-publiques/lautorisation-environnementale">https://www.ecologie.gouv.fr/politiques-publiques/lautorisation-environnementale</a></li></ul></div></details>
+    </article>
+
+    <article class="evidence-card" data-jurisdiction="germany" data-mechanism="whole-installation-floor effects-test industrial-threshold" data-topic="siting application odour traffic water safety participation monitoring">
+      <h3>Germany</h3><span class="badge fact">Confirmed fact - mandatory law and official administrative rule</span>
+      <p class="scope"><strong>Scope:</strong> Relevant non-hazardous-waste biological treatment, with separate manure categories.</p>
+      <p><strong>Headline control:</strong> Formal permit at 50 t/day in the relevant category. TA Luft requires 300 m to existing or planned housing and 500 m for specified open facilities above 50 t/day.</p>
+      <p><strong>Operating controls:</strong> Enclosed reception, extraction, ammonia and odour control, gas-level alarms, leak surveys, flare records, containment, expert inspection and dangerous-defect shutdown.</p>
+      <p><strong>Worked example:</strong> Above 50 and 100 t/day numerically; category and feedstock remain necessary.</p>
+      <p><strong>Limitation:</strong> Do not substitute the separate agricultural provision. The distances are legal floors, not safety guarantees. No federal sector-specific truck threshold was verified.</p>
+      <details class="evidence-disclosure"><summary>Evidence and sources</summary><div><p class="claims">GER-REG-001; GER-EIA-001; GER-SET-001; GER-AIR-001; GER-MON-001; GER-WAT-001; GER-WAT-002; GER-PUB-001; GER-TRA-001</p>
+      <ul class="source-list"><li><a href="https://www.gesetze-im-internet.de/bimschv_4_2013/anhang_1.html">https://www.gesetze-im-internet.de/bimschv_4_2013/anhang_1.html</a></li><li><a href="https://www.verwaltungsvorschriften-im-internet.de/bsvwvbund_18082021_IGI25025005.htm">https://www.verwaltungsvorschriften-im-internet.de/bsvwvbund_18082021_IGI25025005.htm</a></li><li><a href="https://www.gesetze-im-internet.de/awsv/__37.html">https://www.gesetze-im-internet.de/awsv/__37.html</a></li><li><a href="https://www.gesetze-im-internet.de/awsv/anlage_7.html">https://www.gesetze-im-internet.de/awsv/anlage_7.html</a></li></ul></div></details>
+    </article>
+
+    <article class="evidence-card" data-jurisdiction="denmark" data-mechanism="component-rule application-schedule industrial-threshold" data-topic="siting application odour traffic water safety participation monitoring">
+      <h3>Denmark</h3><span class="badge fact">Confirmed fact - mandatory law in stated scope</span>
+      <p class="scope"><strong>Scope:</strong> J205 and industrial routes; specified livestock-farm components have separate siting rules.</p>
+      <p><strong>Headline control:</strong> J205 above 30 t/day unless Annex 1 point 5.3(b) or 6.5 applies. Relevant recovery uses 75 t/day, or 100 t/day when anaerobic digestion is the only waste treatment.</p>
+      <p><strong>Location and evidence:</strong> Specified livestock-farm components have 50 m controls and other water, road and boundary distances. J205 has a detailed application schedule and commissioning conditions.</p>
+      <p><strong>Worked example:</strong> Above listed numbers, but waste, recovery, animal-waste and farm or standalone status decide the route.</p>
+      <p><strong>Limitation:</strong> The 50 m provisions are not a universal standalone whole-plant setback. Full traffic, Natura, major-accident, enforcement and public-data topics need further research.</p>
+      <details class="evidence-disclosure"><summary>Evidence and sources</summary><div><p class="claims">DEN-REG-001; DEN-IED-001; DEN-SET-001; DEN-SET-002; DEN-APP-001; DEN-ODO-001; DEN-WAT-001; DEN-STO-001; DEN-DIG-001; DEN-PUB-001; DEN-GAP-001</p>
+      <ul class="source-list"><li><a href="https://www.retsinformation.dk/eli/lta/2024/1027">https://www.retsinformation.dk/eli/lta/2024/1027</a></li><li><a href="https://www.retsinformation.dk/eli/lta/2025/1065">https://www.retsinformation.dk/eli/lta/2025/1065</a></li><li><a href="https://www.retsinformation.dk/eli/lta/2021/2079">https://www.retsinformation.dk/eli/lta/2021/2079</a></li></ul></div></details>
+    </article>
+
+    <article class="evidence-card" data-jurisdiction="netherlands" data-mechanism="component-rule gas-safety-distance effects-test industrial-threshold" data-topic="siting application odour traffic water safety participation monitoring">
+      <h3>Netherlands</h3><span class="badge fact">Confirmed fact - layered mandatory rules in stated scope</span>
+      <p class="scope"><strong>Scope:</strong> Activity and permit route depends on manure, plant material, waste inputs and scale.</p>
+      <p><strong>Headline control:</strong> Qualifying non-hazardous-waste recovery above 100 t/day can enter the IPPC route. Bkl tables retain 100 m and 50 m distances for specified activities and sizes. A separate gas bag or liquefied-biogas tank has a 50 m site-boundary safety distance.</p>
+      <p><strong>Operating and environmental controls:</strong> General acceptable-odour duty and Natura/site-integrity assessment; AERIUS is prescribed in its stated nitrogen-calculation context.</p>
+      <p><strong>Worked example:</strong> Above 100 t/day only if qualifying recovery applies and may exceed smaller activity-table sizes.</p>
+      <p><strong>Limitation:</strong> Activity tables, gas safety and effects tests are not equivalent. Several national digestate, water, process-emission, accident and enforcement topics need further research.</p>
+      <details class="evidence-disclosure"><summary>Evidence and sources</summary><div><p class="claims">NLD-REG-001; NLD-IPPC-001; NLD-SET-001; NLD-SAF-001; NLD-SAF-002; NLD-ODO-001; NLD-NAT-001; NLD-NAT-002; NLD-EIA-001; NLD-PUB-001; NLD-GAP-001</p>
+      <ul class="source-list"><li><a href="https://wetten.overheid.nl/BWBR0041330/2026-01-01/0/Hoofdstuk3/Afdeling3.6/Paragraaf3.6.8/">https://wetten.overheid.nl/BWBR0041330/2026-01-01/0/Hoofdstuk3/Afdeling3.6/Paragraaf3.6.8/</a></li><li><a href="https://wetten.overheid.nl/BWBR0041313/2026-01-01/0/Hoofdstuk5/Afdeling5.1/Paragraaf5.1.4/Artikel5.120/">https://wetten.overheid.nl/BWBR0041313/2026-01-01/0/Hoofdstuk5/Afdeling5.1/Paragraaf5.1.4/Artikel5.120/</a></li><li><a href="https://iplo.nl/regelgeving/regels-voor-activiteiten/mestvergistingsinstallatie/regels-veiligheid/">https://iplo.nl/regelgeving/regels-voor-activiteiten/mestvergistingsinstallatie/regels-veiligheid/</a></li></ul></div></details>
+    </article>
+
+    <article class="evidence-card" data-jurisdiction="ontario" data-mechanism="formula component-definition effects-test" data-topic="siting application odour traffic water safety participation monitoring">
+      <h3>Ontario</h3><span class="badge fact">Confirmed fact - official guidance and route-specific law</span>
+      <p class="scope"><strong>Scope:</strong> Rural and agricultural Minimum Distance Separation plus farm or environmental approval routes.</p>
+      <p><strong>Headline control:</strong> Publication 853 uses 200 m to dwellings and Type A uses, 450 m to Type B uses, 20 m to rear or side lot lines and 40 m to roads. The ordinary reduction guideline does not reduce the anaerobic-digestion distances.</p>
+      <p><strong>Installation definition:</strong> Associated feedstock and digestate storage, loading and unloading, flares and separators are included.</p>
+      <p><strong>Worked example:</strong> Tonnage alone does not select the Minimum Distance Separation, farm or Environmental Compliance Approval route.</p>
+      <p><strong>Limitation:</strong> The distances are not universal industrial law or scientific safety findings. No province-wide sector-specific vehicle threshold was verified.</p>
+      <details class="evidence-disclosure"><summary>Evidence and sources</summary><div><p class="claims">ONT-SET-001; ONT-SET-002; ONT-DEF-001; ONT-REG-001; ONT-ECA-001; ONT-ODO-001; ONT-SAF-001; ONT-TRA-001</p>
+      <ul class="source-list"><li><a href="https://www.ontario.ca/page/publication-853-minimum-distance-separation-mds-document">https://www.ontario.ca/page/publication-853-minimum-distance-separation-mds-document</a></li><li><a href="https://www.ontario.ca/files/2022-03/omafra-minimum-distance-separation-pub-853-en-2020-03-28.pdf">https://www.ontario.ca/files/2022-03/omafra-minimum-distance-separation-pub-853-en-2020-03-28.pdf</a></li><li><a href="https://www.ontario.ca/page/environmental-compliance-approval">https://www.ontario.ca/page/environmental-compliance-approval</a></li></ul></div></details>
+    </article>
+  </div>
+
+  <details class="evidence-disclosure"><summary>Detailed country comparison and claim IDs</summary><div>
+  <p><span class="badge fact">Confirmed fact</span> The following table condenses official legal and guidance findings. Each row carries its controlling claim IDs, and the full official URLs are printed immediately below.</p>
+  <div class="table-wrap">
+    <table>
+      <caption>Core comparison by mechanism</caption>
+      <thead><tr><th scope="col">Jurisdiction and claim IDs</th><th scope="col">Front-end route</th><th scope="col">Siting mechanism</th><th scope="col">Operating controls</th><th scope="col">Essential caution</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">Ireland<br><span class="claims">[EU-IED-001; EU-BAT-001; IRL-GAP-001]</span></th><td>50/75/100 t/day categories, conditional on feedstock, waste or by-product status, treatment purpose and route, and co-located operations</td><td>No verified national sector-specific floor</td><td>Best available techniques and other regimes in scope</td><td>Planning gap does not mean no regulation</td></tr>
+        <tr><th scope="row">France<br><span class="claims">[FRA-REG-001; FRA-SET-001; FRA-SET-002; FRA-ODO-001; FRA-WAT-002; FRA-DIG-001]</span></th><td>ICPE 2781 authorisation at 100 t/day in scope; any waste or Industrial Emissions Directive conclusion remains conditional on feedstock, waste or by-product status, treatment purpose and route, and co-located operations</td><td>200 m to specified dwellings and traveller sites</td><td>Odour criterion, containment and spreading records</td><td>Other public receptors and effects remain case specific</td></tr>
+        <tr><th scope="row">Germany<br><span class="claims">[GER-REG-001; GER-SET-001; GER-AIR-001; GER-MON-001; GER-WAT-001; GER-WAT-002]</span></th><td>Formal route from 50 t/day in the relevant category; any waste or Industrial Emissions Directive conclusion remains conditional on feedstock, waste or by-product status, treatment purpose and route, and co-located operations</td><td>300 m housing; 500 m specified open facilities</td><td>Enclosure, gas, water and independent checks</td><td>Separate agricultural provision is different</td></tr>
+        <tr><th scope="row">Denmark<br><span class="claims">[DEN-REG-001; DEN-IED-001; DEN-SET-001; DEN-SET-002; DEN-APP-001; DEN-ODO-001; DEN-WAT-001; DEN-GAP-001]</span></th><td>J205 over 30 t/day or 75/100 t/day route in scope; any waste or Industrial Emissions Directive conclusion remains conditional on feedstock, waste or by-product status, treatment purpose and route, and co-located operations</td><td>Livestock-component distances, not a universal whole-plant floor</td><td>Detailed application schedule and commissioning</td><td>Several audit topics need further research</td></tr>
+        <tr><th scope="row">Netherlands<br><span class="claims">[NLD-REG-001; NLD-IPPC-001; NLD-SET-001; NLD-SAF-001; NLD-ODO-001; NLD-NAT-001; NLD-GAP-001]</span></th><td>Activity and feedstock routes; a 100 t/day IPPC conclusion remains conditional on feedstock, waste or by-product status, treatment purpose and route, and co-located operations</td><td>Activity tables plus separate gas-safety distance</td><td>Acceptable odour and Natura assessment</td><td>Mechanisms and local implementation must remain distinct</td></tr>
+        <tr><th scope="row">Ontario<br><span class="claims">[ONT-REG-001; ONT-ECA-001; ONT-SET-001; ONT-SET-002; ONT-ODO-001]</span></th><td>Farm or environmental approval depends on facts</td><td>200 m/450 m within rural and agricultural guidance</td><td>Odour plan and route-specific controls</td><td>Not universal industrial law</td></tr>
+      </tbody>
+    </table>
+  </div>
+  </div></details>
+  <details class="evidence-disclosure"><summary>Evidence and sources for the condensed table</summary><div class="table-sources">
+    <span class="badge fact">Confirmed fact - official sources for the table</span>
+    <p><strong>Ireland and EU:</strong><br><a href="https://eur-lex.europa.eu/eli/dir/2010/75/2024-08-04/eng">https://eur-lex.europa.eu/eli/dir/2010/75/2024-08-04/eng</a><br><a href="https://eur-lex.europa.eu/eli/dec_impl/2018/1147/oj/eng">https://eur-lex.europa.eu/eli/dec_impl/2018/1147/oj/eng</a><br><a href="https://data.oireachtas.ie/ie/oireachtas/committee/dail/34/joint_committee_on_agriculture_and_food/reports/2026/2026-06-30_report-on-anaerobic-digestion_en.pdf">https://data.oireachtas.ie/ie/oireachtas/committee/dail/34/joint_committee_on_agriculture_and_food/reports/2026/2026-06-30_report-on-anaerobic-digestion_en.pdf</a></p>
+    <p><strong>France:</strong><br><a href="https://aida.ineris.fr/reglementation/2781-installation-methanisation-dechets-non-dangereux-matiere-vegetale-brute-a">https://aida.ineris.fr/reglementation/2781-installation-methanisation-dechets-non-dangereux-matiere-vegetale-brute-a</a><br><a href="https://aida.ineris.fr/reglementation/arrete-101109-fixant-regles-techniques-auxquelles-doivent-satisfaire-installations">https://aida.ineris.fr/reglementation/arrete-101109-fixant-regles-techniques-auxquelles-doivent-satisfaire-installations</a></p>
+    <p><strong>Germany:</strong><br><a href="https://www.gesetze-im-internet.de/bimschv_4_2013/anhang_1.html">https://www.gesetze-im-internet.de/bimschv_4_2013/anhang_1.html</a><br><a href="https://www.verwaltungsvorschriften-im-internet.de/bsvwvbund_18082021_IGI25025005.htm">https://www.verwaltungsvorschriften-im-internet.de/bsvwvbund_18082021_IGI25025005.htm</a><br><a href="https://www.gesetze-im-internet.de/awsv/__37.html">https://www.gesetze-im-internet.de/awsv/__37.html</a><br><a href="https://www.gesetze-im-internet.de/awsv/anlage_7.html">https://www.gesetze-im-internet.de/awsv/anlage_7.html</a></p>
+    <p><strong>Denmark:</strong><br><a href="https://www.retsinformation.dk/eli/lta/2024/1027">https://www.retsinformation.dk/eli/lta/2024/1027</a><br><a href="https://www.retsinformation.dk/eli/lta/2025/1065">https://www.retsinformation.dk/eli/lta/2025/1065</a><br><a href="https://www.retsinformation.dk/eli/lta/2021/2079">https://www.retsinformation.dk/eli/lta/2021/2079</a></p>
+    <p><strong>Netherlands:</strong><br><a href="https://wetten.overheid.nl/BWBR0041330/2026-01-01/0/Hoofdstuk3/Afdeling3.6/Paragraaf3.6.8/">https://wetten.overheid.nl/BWBR0041330/2026-01-01/0/Hoofdstuk3/Afdeling3.6/Paragraaf3.6.8/</a><br><a href="https://iplo.nl/thema/toepassing-regels-praktijk/veehouderijen/covergisten-mest/welke-regels-gelden-covergisten/">https://iplo.nl/thema/toepassing-regels-praktijk/veehouderijen/covergisten-mest/welke-regels-gelden-covergisten/</a><br><a href="https://wetten.overheid.nl/BWBR0041313/2026-01-01/0/Hoofdstuk5/Afdeling5.1/Paragraaf5.1.4/Artikel5.120/">https://wetten.overheid.nl/BWBR0041313/2026-01-01/0/Hoofdstuk5/Afdeling5.1/Paragraaf5.1.4/Artikel5.120/</a><br><a href="https://iplo.nl/regelgeving/regels-voor-activiteiten/mestvergistingsinstallatie/regels-veiligheid/">https://iplo.nl/regelgeving/regels-voor-activiteiten/mestvergistingsinstallatie/regels-veiligheid/</a><br><a href="https://wetten.overheid.nl/BWBR0041313/2026-01-01/0/Hoofdstuk5/Afdeling5.1/Paragraaf5.1.4/Artikel5.92/">https://wetten.overheid.nl/BWBR0041313/2026-01-01/0/Hoofdstuk5/Afdeling5.1/Paragraaf5.1.4/Artikel5.92/</a><br><a href="https://wetten.overheid.nl/BWBR0041313/2026-01-01/0/Hoofdstuk8/Afdeling8.6/Paragraaf8.6.1/Artikel8.74b/">https://wetten.overheid.nl/BWBR0041313/2026-01-01/0/Hoofdstuk8/Afdeling8.6/Paragraaf8.6.1/Artikel8.74b/</a></p>
+    <p><strong>Ontario:</strong><br><a href="https://www.ontario.ca/document/regulatory-requirements-regulated-mixed-anaerobic-digestion-facilities">https://www.ontario.ca/document/regulatory-requirements-regulated-mixed-anaerobic-digestion-facilities</a><br><a href="https://www.ontario.ca/page/environmental-compliance-approval">https://www.ontario.ca/page/environmental-compliance-approval</a><br><a href="https://www.ontario.ca/page/publication-853-minimum-distance-separation-mds-document">https://www.ontario.ca/page/publication-853-minimum-distance-separation-mds-document</a><br><a href="https://www.ontario.ca/files/2022-03/omafra-minimum-distance-separation-pub-853-en-2020-03-28.pdf">https://www.ontario.ca/files/2022-03/omafra-minimum-distance-separation-pub-853-en-2020-03-28.pdf</a><br><a href="https://www.ontario.ca/page/odour-guidance-farm-anaerobic-digestion">https://www.ontario.ca/page/odour-guidance-farm-anaerobic-digestion</a></p>
+  </div></details>
+</section>
+
+<section id="issues" aria-labelledby="issues-heading">
+  <h2 id="issues-heading">Issue-based comparison</h2>
+  <p class="section-intro">The same comparison, now organised by the concerns communities raise most often, so you can see how each issue is handled across jurisdictions.</p>
+
+  <div class="issue-section" id="issue-siting">
+    <h3>Siting, setbacks and receptors</h3>
+    <article class="evidence-card" data-jurisdiction="ireland france germany denmark netherlands ontario" data-mechanism="whole-installation-floor component-rule formula effects-test" data-topic="siting">
+      <span class="badge fact">Confirmed comparison</span>
+      <p>France's 200 m rule, Germany's 300 m and 500 m rules, Ontario's 200 m and 450 m guidance, Danish livestock-component distances, Dutch activity tables and the Dutch 50 m gas-equipment distance have different scope and measurement rules. [FRA-SET-001; FRA-SET-002; GER-SET-001; ONT-SET-001; ONT-SET-002; ONT-DEF-001; DEN-SET-001; DEN-SET-002; NLD-SET-001; NLD-SAF-001]</p>
+      <details class="evidence-disclosure"><summary>Evidence and sources</summary><div><p><a href="https://aida.ineris.fr/reglementation/arrete-101109-fixant-regles-techniques-auxquelles-doivent-satisfaire-installations">https://aida.ineris.fr/reglementation/arrete-101109-fixant-regles-techniques-auxquelles-doivent-satisfaire-installations</a><br><a href="https://www.verwaltungsvorschriften-im-internet.de/bsvwvbund_18082021_IGI25025005.htm">https://www.verwaltungsvorschriften-im-internet.de/bsvwvbund_18082021_IGI25025005.htm</a><br><a href="https://www.ontario.ca/files/2022-03/omafra-minimum-distance-separation-pub-853-en-2020-03-28.pdf">https://www.ontario.ca/files/2022-03/omafra-minimum-distance-separation-pub-853-en-2020-03-28.pdf</a></p></div></details>
+      <span class="badge recommendation">National Biogas Concern Group recommendation</span><p>Define facility category, relevant components, receptor categories and measurement points, and retain site-specific assessment with power to require greater distance. [NBCG-SITE-001]</p>
+    </article>
+  </div>
+
+  <div class="issue-section" id="issue-application">
+    <h3>Application information and validation</h3>
+    <article class="evidence-card" data-jurisdiction="denmark ireland" data-mechanism="application-schedule" data-topic="application">
+      <span class="badge fact">Confirmed fact</span><p>Denmark's J205 schedule requires information on layout, reception, storage, treatment, gas, ventilation, odour, transport, digestate, flare, containment and drainage. [DEN-APP-001]</p>
+      <details class="evidence-disclosure"><summary>Evidence and sources</summary><div><p><a href="https://www.retsinformation.dk/eli/lta/2021/2079">https://www.retsinformation.dk/eli/lta/2021/2079</a></p></div></details>
+      <span class="badge recommendation">National Biogas Concern Group recommendation</span><p>Require a fixed project envelope, certified receptor map, full balances, effects evidence, land bank, containment, hazardous inventory, alternatives and monitoring before substantive assessment. [NBCG-APP-001]</p>
+    </article>
+  </div>
+
+  <div class="issue-section" id="issue-odour">
+    <h3>Odour, noise and air</h3>
+    <article class="evidence-card" data-jurisdiction="ireland france germany denmark netherlands ontario" data-mechanism="effects-test operating-control" data-topic="odour monitoring">
+      <span class="badge fact">Confirmed facts</span><p>Waste Treatment best available techniques require odour management in stated circumstances. France uses a source dossier and operating criterion. Germany specifies enclosure and gas checks, Denmark requires commissioning in J205, the Netherlands requires acceptable odour, and Ontario requires a professional-engineer odour plan in stated scope. [EU-BAT-001; FRA-ODO-001; GER-AIR-001; GER-MON-001; DEN-ODO-001; NLD-ODO-001; ONT-ODO-001]</p>
+      <details class="evidence-disclosure"><summary>Evidence and sources</summary><div><p><a href="https://eur-lex.europa.eu/eli/dec_impl/2018/1147/oj/eng">https://eur-lex.europa.eu/eli/dec_impl/2018/1147/oj/eng</a><br><a href="https://aida.ineris.fr/reglementation/arrete-101109-fixant-regles-techniques-auxquelles-doivent-satisfaire-installations">https://aida.ineris.fr/reglementation/arrete-101109-fixant-regles-techniques-auxquelles-doivent-satisfaire-installations</a><br><a href="https://www.verwaltungsvorschriften-im-internet.de/bsvwvbund_18082021_IGI25025005.htm">https://www.verwaltungsvorschriften-im-internet.de/bsvwvbund_18082021_IGI25025005.htm</a></p></div></details>
+      <span class="badge recommendation">National Biogas Concern Group recommendation</span><p>Inventory normal, abnormal and maintenance sources; model locally; prevent and enclose first; commission and verify; investigate complaints; and impose corrective deadlines. Include day and night noise, tonal, impulsive and low-frequency characteristics. [NBCG-ODO-001]</p>
+    </article>
+  </div>
+
+  <div class="issue-section" id="issue-water">
+    <h3>Water, karst, drainage and containment</h3>
+    <article class="evidence-card" data-jurisdiction="ireland france germany denmark" data-mechanism="operating-control effects-test" data-topic="water monitoring">
+      <span class="badge fact">Confirmed facts</span><p>EU law protects surface and groundwater status. Irish Article 17 sets spreading distances, not plant siting distances. France and Germany provide defined containment controls, and Denmark's J205 conditions include impermeability and leak checks. [EU-WFD-001; IRL-WAT-001; FRA-WAT-001; FRA-WAT-002; GER-WAT-001; GER-WAT-002; DEN-WAT-001]</p>
+      <details class="evidence-disclosure"><summary>Evidence and sources</summary><div><p><a href="https://eur-lex.europa.eu/eli/dir/2000/60/2014-11-20/eng">https://eur-lex.europa.eu/eli/dir/2000/60/2014-11-20/eng</a><br><a href="https://www.irishstatutebook.ie/eli/2022/si/113/made/en/print">https://www.irishstatutebook.ie/eli/2022/si/113/made/en/print</a><br><a href="https://www.gesetze-im-internet.de/awsv/__37.html">https://www.gesetze-im-internet.de/awsv/__37.html</a></p></div></details>
+      <span class="badge recommendation">National Biogas Concern Group recommendation</span><p>Require one reconciled drainage and containment concept, hydrogeology proportionate to risk, automatic isolation, emergency and firewater retention, baseline and operational monitoring, and clear response triggers. [NBCG-DIG-001; NBCG-SAF-001]</p>
+    </article>
+  </div>
+
+  <div class="issue-section" id="issue-digestate">
+    <h3>Digestate, receiving land and nutrients</h3>
+    <article class="evidence-card" data-jurisdiction="ireland france denmark" data-mechanism="operating-control" data-topic="water traffic monitoring">
+      <span class="badge fact">Confirmed facts</span><p>Nutrient and spreading treatment depends on composition and legal status. France uses a spreading plan for eligible waste digestate, Denmark uses a documented organic-nitrogen land calculation in scope, and Northern Ireland expressly regulates digestate analysis, planning, storage and records. [EU-NIT-001; FRA-DIG-001; DEN-DIG-001; NIR-WAT-001; NIR-STO-001]</p>
+      <details class="evidence-disclosure"><summary>Evidence and sources</summary><div><p><a href="https://eur-lex.europa.eu/eli/dir/1991/676/2008-12-11/eng">https://eur-lex.europa.eu/eli/dir/1991/676/2008-12-11/eng</a><br><a href="https://www.retsinformation.dk/eli/lta/2024/931">https://www.retsinformation.dk/eli/lta/2024/931</a><br><a href="https://www.legislation.gov.uk/nisr/2019/81/made">https://www.legislation.gov.uk/nisr/2019/81/made</a></p></div></details>
+      <span class="badge recommendation">National Biogas Concern Group recommendation</span><p>Require full mass and nutrient balance, covered storage, parcel-level legal availability, nitrogen and phosphorus assessment, catchment pressure, receiver-change controls, records and independent audit. [NBCG-DIG-001]</p>
+    </article>
+  </div>
+
+  <div class="issue-section" id="issue-traffic">
+    <h3>Traffic, routes and road safety</h3>
+    <article class="evidence-card" data-jurisdiction="ireland france germany denmark netherlands ontario" data-mechanism="effects-test evidence-gap" data-topic="traffic application monitoring">
+      <span class="badge gap">Documented gap</span><p>No national sector-specific truck or route threshold was verified across the reviewed countries. This does not mean traffic is generally unregulated; general planning and environmental assessment remain relevant. No transferable peer-reviewed universal vehicle threshold was identified. [FRA-TRA-001; GER-TRA-001; NLD-TRA-001; ONT-TRA-001; SCI-GAP-001]</p>
+      <span class="badge recommendation">National Biogas Concern Group recommendation</span><p>Reconcile every material stream to payloads and annual, average-day, peak-day and peak-hour movements; map all routes and cumulative projects; and make throughput, routes, hours and movement limits enforceable. [NBCG-TRA-001]</p>
+    </article>
+  </div>
+
+  <div class="issue-section" id="issue-safety">
+    <h3>Fire, gas, explosion and accidents</h3>
+    <article class="evidence-card" data-jurisdiction="ireland germany netherlands ontario" data-mechanism="gas-safety-distance inventory-threshold operating-control" data-topic="safety monitoring">
+      <span class="badge fact">Confirmed facts</span><p>Seveso qualifying quantities depend on maximum gas inventory and classification, not annual feedstock. Germany uses gas-level, leak and flare controls in scope. The Dutch 50 m rule is an equipment-to-boundary safety distance. Ontario guidance identifies methane and hydrogen-sulphide hazards. [EU-SEV-001; GER-MON-001; NLD-SAF-001; ONT-SAF-001]</p>
+      <details class="evidence-disclosure"><summary>Evidence and sources</summary><div><p><a href="https://eur-lex.europa.eu/eli/dir/2012/18/2012-08-13/eng">https://eur-lex.europa.eu/eli/dir/2012/18/2012-08-13/eng</a><br><a href="https://iplo.nl/regelgeving/regels-voor-activiteiten/mestvergistingsinstallatie/regels-veiligheid/">https://iplo.nl/regelgeving/regels-voor-activiteiten/mestvergistingsinstallatie/regels-veiligheid/</a><br><a href="https://www.ontario.ca/page/hydrogen-sulphide-agricultural-biogas-systems">https://www.ontario.ca/page/hydrogen-sulphide-agricultural-biogas-systems</a></p></div></details>
+      <span class="badge recommendation">National Biogas Concern Group recommendation</span><p>Require planning-stage hazardous inventory, credible fire, explosion, gas-release and containment cases, flare and firewater capacity, emergency access and operator competence. [NBCG-SAF-001]</p>
+    </article>
+  </div>
+
+  <div class="issue-section" id="issue-participation">
+    <h3>Participation, alternatives and design response</h3>
+    <article class="evidence-card" data-jurisdiction="ireland france germany denmark netherlands ontario" data-mechanism="participation" data-topic="participation">
+      <span class="badge fact">Confirmed facts</span><p>The Oireachtas committee identified a sector-specific engagement gap. France's official current description provides concurrent participation in the stated authorisation route. Germany's formal route provides publication, inspection and objections. Denmark's eight-week period applies to consultation on a full environmental-impact report, and the verified Dutch six-week period is specific to the stated Natura route. [IRL-GAP-001; FRA-PUB-001; GER-PUB-001; DEN-PUB-001; NLD-PUB-001]</p>
+      <details class="evidence-disclosure"><summary>Evidence and sources</summary><div><p><a href="https://www.ecologie.gouv.fr/politiques-publiques/lautorisation-environnementale">https://www.ecologie.gouv.fr/politiques-publiques/lautorisation-environnementale</a><br><a href="https://www.gesetze-im-internet.de/bimschg/__10.html">https://www.gesetze-im-internet.de/bimschg/__10.html</a></p></div></details>
+      <span class="badge recommendation">National Biogas Concern Group recommendation</span><p>Engage before design is fixed, disclose reasonable alternatives and publish a response and design-change record. Keep statutory participation and appeal rights separate. [NBCG-ENG-001]</p>
+    </article>
+  </div>
+
+  <div class="issue-section" id="issue-monitoring">
+    <h3>Monitoring, complaints and enforcement</h3>
+    <article class="evidence-card" data-jurisdiction="ireland france germany denmark netherlands ontario" data-mechanism="operating-control" data-topic="monitoring odour water safety">
+      <span class="badge fact">Confirmed facts</span><p>Waste Treatment best available techniques cover monitoring and accidents in scope. Germany requires gas and water checks and records. Denmark includes commissioning and leak checks. Measured methane studies show material plant-to-plant variation. [EU-BAT-002; GER-MON-001; GER-WAT-002; DEN-ODO-001; DEN-WAT-001; SCI-MET-001; SCI-MET-002; SCI-MET-003]</p>
+      <details class="evidence-disclosure"><summary>Evidence and sources</summary><div><p><a href="https://doi.org/10.1016/j.wasman.2019.07.029">https://doi.org/10.1016/j.wasman.2019.07.029</a><br><a href="https://doi.org/10.1016/j.wasman.2021.01.011">https://doi.org/10.1016/j.wasman.2021.01.011</a><br><a href="https://doi.org/10.1016/j.wasman.2022.12.012">https://doi.org/10.1016/j.wasman.2022.12.012</a></p></div></details>
+      <span class="badge recommendation">National Biogas Concern Group recommendation</span><p>Use witnessed commissioning, independent periodic verification, public non-confidential returns, incident disclosure, complaint outcomes, raw-record retention and escalation or review triggers. [NBCG-MON-001]</p>
+    </article>
+  </div>
+
+  <div class="issue-section" id="issue-coordination">
+    <h3>Regulator coordination and one decision record</h3>
+    <article class="evidence-card" data-jurisdiction="ireland" data-mechanism="application-schedule governance" data-topic="application participation monitoring">
+      <span class="badge recommendation">National Biogas Concern Group recommendation</span><p>Use one controlled application dataset and a published responsibility map linking planning, environmental permitting, roads, water, agriculture and animal by-products, habitats and safety, while preserving each body's legal role. Publish which evidence was accepted, refused or deferred. [NBCG-COORD-001]</p>
+    </article>
+  </div>
+</section>
+
+<section id="framework" aria-labelledby="framework-heading">
+  <h2 id="framework-heading">Proposed Irish tiered framework</h2>
+  <p class="section-intro">Drawing those lessons together, here is a practical way Ireland could close the gap: proportionate tiers that match scrutiny to scale and risk, rather than one blunt rule.</p>
+  <div class="tier-grid">
+    <article class="tier-card"><h3>1. Universal baseline</h3><p><strong>Every proposal.</strong> Classification, project envelope, receptors, material flow, water, traffic, digestate, gas inventory, engagement and regulator map.</p></article>
+    <article class="tier-card"><h3>2. Enhanced risk</h3><p><strong>Triggered by effects or route.</strong> 50/75 t/day waste category, imported or centralised feedstock, sensitive receptors, vulnerable water, constrained roads, off-site digestate, expansion or cumulative development.</p></article>
+    <article class="tier-card"><h3>3. Industrial and cumulative</h3><p><strong>100 t/day design capacity or equivalent scale and risk.</strong> Full industrial schedule, alternatives, independent review, commissioning gates, public reporting and cumulative assessment.</p></article>
+  </div>
+  <div class="recommendation-box"><span class="badge recommendation">National Biogas Concern Group recommendation</span><p>Apply all three levels without allowing a crop, manure or by-product label to bypass planning scrutiny. Separate law still decides waste, industrial-emissions and animal-by-product routes. [NBCG-TIER-001]</p></div>
+  <h3>Industrial-tier application schedule</h3>
+  <ol>
+    <li>Annual and maximum daily design intake, operating days, feedstocks, legal-status assumptions and expansion.</li>
+    <li>Fixed process envelope and mapped active components.</li>
+    <li>Site-selection report with reasonable alternatives and constraints.</li>
+    <li>Certified boundary, component and receptor schedule with measurement points.</li>
+    <li>Mass, water, carbon, nitrogen and phosphorus balances.</li>
+    <li>Odour, air and noise inventories, models, guarantees and abnormal cases.</li>
+    <li>Drainage, containment, groundwater, karst, flood and firewater concept.</li>
+    <li>Digestate storage, quality, parcel-level land bank, existing loads and contingency.</li>
+    <li>Annual, average-day, peak-day and peak-hour traffic with payloads and every route.</li>
+    <li>Hazardous inventory, credible accidents, emergency access and operator competence.</li>
+    <li>Habitats source-pathway-receptor and in-combination schedule.</li>
+    <li>Commissioning, monitoring, public reporting, complaints, incidents and escalation.</li>
+  </ol>
+  <p><span class="badge recommendation">National Biogas Concern Group recommendation</span> [NBCG-APP-001]</p>
+</section>
+
+<section id="planner-checklist" class="proposed-tool" aria-labelledby="checklist-heading">
+  <p class="tool-label">NBCG PROPOSED TOOL - NOT CURRENT IRISH LAW</p>
+  <h2 id="checklist-heading">Planner application-completeness checklist</h2>
+  <p>This printable working tool is proposed for local-authority planners. Completing it does not determine permission, replace statutory validation rules or resolve the planning merits. Each row identifies the proposed evidence check and its audited basis; legal classification must still be decided from the project facts.</p>
+  <div class="checklist-meta" aria-label="Checklist reference fields"><span><strong>Application reference:</strong></span><span><strong>Date reviewed:</strong></span><span><strong>Planner:</strong></span></div>
+  <div class="table-wrap checklist-wrap" role="region" aria-label="Planner completeness checklist" tabindex="0">
+    <table class="checklist">
+      <caption>NBCG PROPOSED TOOL - NOT CURRENT IRISH LAW</caption>
+      <thead><tr><th scope="col">Assessment</th><th scope="col">What must be measured or declared</th><th scope="col">How the planner validates it</th><th scope="col">Warning signs / incompleteness triggers</th></tr></thead>
+      <tbody>
+        <tr><th scope="row"><span class="assessment-name">1. Legal classification</span><span class="assessment-basis">Do not classify on tonnage alone. Waste or feedstock status affects the route. [EU-IED-001; IRL-ABP-001; EU-SEV-001; DEN-REG-001; NLD-REG-001; ONT-REG-001]</span></th><td data-label="What must be measured or declared">Maximum daily and annual intake; every feedstock; waste, by-product and animal-by-product assumptions; treatment route; co-located activities; maximum gas inventory.</td><td data-label="How the planner validates it">Cross-check intake units and operating days; reconcile classifications with feedstock evidence, process purpose, linked operations and the stated legal routes.</td><td data-label="Warning signs / incompleteness triggers">Tonnage used as the sole classification test; unclear feedstock status; omitted co-located treatment; annual gas output substituted for maximum inventory.</td></tr>
+        <tr><th scope="row"><span class="assessment-name">2. Fixed project envelope and capacity</span><span class="assessment-basis">Denmark's comparator is limited to the J205 route. [DEN-APP-001; NBCG-APP-001]</span></th><td data-label="What must be measured or declared">Site boundary; all process components; design and maximum capacity; operating days and hours; expansion assumptions; matters that cannot change after assessment.</td><td data-label="How the planner validates it">Reconcile drawings, schedules, technical reports and traffic or material calculations to one version-controlled envelope.</td><td data-label="Warning signs / incompleteness triggers">Conflicting capacities or layouts; undefined phases; key equipment described as indicative; later expansion embedded but not assessed.</td></tr>
+        <tr><th scope="row"><span class="assessment-name">3. Whole-installation and receptor mapping</span><span class="assessment-basis">Foreign definitions have different scope. No distance is a universal safety threshold. [ONT-DEF-001; FRA-SET-001; FRA-SET-002; NBCG-SITE-001]</span></th><td data-label="What must be measured or declared">Boundary, active components, stacks, loading, storage, flare, routes, receptor categories and each source, boundary or receptor measurement point.</td><td data-label="How the planner validates it">Check a certified schedule against scaled drawings, site inspection or mapping, land ownership and every effects assessment.</td><td data-label="Warning signs / incompleteness triggers">Distances from inconsistent points; omitted stores or routes; unidentified homes or sensitive receptors; component and whole-installation rules treated as equivalent.</td></tr>
+        <tr><th scope="row"><span class="assessment-name">4. Material balance</span><span class="assessment-basis">Denmark requires quantity and process disclosures in J205 scope. [DEN-APP-001; NBCG-APP-001; NBCG-DIG-001]</span></th><td data-label="What must be measured or declared">Annual, daily and peak feedstocks; water; gas; digestate; rejects; losses; storage changes and process recirculation.</td><td data-label="How the planner validates it">Check that all inputs, outputs, conversions and storage assumptions reconcile in consistent units and feed the traffic, water and land-bank assessments.</td><td data-label="Warning signs / incompleteness triggers">Unbalanced totals; dry and wet tonnes mixed; peak flow absent; outputs or rejects omitted; separate reports use different assumptions.</td></tr>
+        <tr><th scope="row"><span class="assessment-name">5. Average and peak traffic</span><span class="assessment-basis">No universal vehicle threshold was identified. [FRA-TRA-001; GER-TRA-001; NLD-TRA-001; ONT-TRA-001; SCI-GAP-001; NBCG-TRA-001]</span></th><td data-label="What must be measured or declared">Payloads; loaded, return and empty trips; annual, average-day, peak-day and peak-hour movements; every route; schools, villages, vulnerable road users and cumulative projects.</td><td data-label="How the planner validates it">Derive vehicle movements from the material balance, test seasonal and abnormal peaks, inspect route geometry and land control, and match proposed limits to conditions.</td><td data-label="Warning signs / incompleteness triggers">Only annual averages; unexplained payloads; one-way trips counted; digestate or staff omitted; route feasibility deferred; limits cannot be monitored.</td></tr>
+        <tr><th scope="row"><span class="assessment-name">6. Digestate volume, nutrients, storage and parcel-level land bank</span><span class="assessment-basis">Composition and legal status matter. [EU-NIT-001; FRA-DIG-001; DEN-DIG-001; NIR-WAT-001; NIR-STO-001; NBCG-DIG-001]</span></th><td data-label="What must be measured or declared">Digestate quantity and analysis; nitrogen and phosphorus balance; covered storage capacity and duration; parcel-level availability, existing commitments, water constraints, contingency and receiver changes.</td><td data-label="How the planner validates it">Reconcile volume to the material balance; test storage through restricted periods; verify parcel identifiers, lawful availability, nutrient demand and catchment pressure without double counting.</td><td data-label="Warning signs / incompleteness triggers">Generic land-bank hectares; unsigned or duplicated parcels; phosphorus omitted; storage assumes uninterrupted spreading; receiver changes uncontrolled.</td></tr>
+        <tr><th scope="row"><span class="assessment-name">7. Odour, noise and air source inventory and modelling</span><span class="assessment-basis">No universal noise criterion or distance is proposed. [EU-BAT-001; FRA-ODO-001; GER-AIR-001; GER-MON-001; DEN-ODO-001; NLD-ODO-001; ONT-ODO-001; NBCG-ODO-001]</span></th><td data-label="What must be measured or declared">Normal, abnormal and maintenance sources; emission assumptions; local receptors and meteorology; controls and guarantees; day and night noise including tonal, impulsive and low-frequency characteristics.</td><td data-label="How the planner validates it">Match every mapped source to model inputs and controls; test abnormal cases; review local baseline and commissioning, verification and complaint-response methods.</td><td data-label="Warning signs / incompleteness triggers">Source inventory does not match layout; copied emission factors without justification; abnormal operations omitted; model headline without inputs; no enforceable performance check.</td></tr>
+        <tr><th scope="row"><span class="assessment-name">8. Water, hydrogeology, drainage, containment and firewater</span><span class="assessment-basis">Irish Article 17 distances concern spreading, not plant siting. [EU-WFD-001; IRL-WAT-001; FRA-WAT-001; FRA-WAT-002; GER-WAT-001; GER-WAT-002; DEN-WAT-001; NBCG-DIG-001; NBCG-SAF-001]</span></th><td data-label="What must be measured or declared">Surface water, groundwater, hydrogeology, karst and flood risk; clean and dirty drainage; containment volumes; automatic isolation; firewater; baseline monitoring and response triggers.</td><td data-label="How the planner validates it">Trace all drainage pathways; reconcile bund and firewater calculations to maximum inventories and rainfall; review ground investigation and monitoring locations against the conceptual site model.</td><td data-label="Warning signs / incompleteness triggers">Disconnected drainage drawings; no credible worst case; unverified infiltration; firewater omitted; monitoring points not up-gradient and down-gradient; response left undefined.</td></tr>
+        <tr><th scope="row"><span class="assessment-name">9. Gas inventory, credible accidents and emergency plan</span><span class="assessment-basis">Non-COMAH status is not a complete safety finding. [EU-SEV-001; GER-MON-001; NLD-SAF-001; ONT-SAF-001; NBCG-SAF-001]</span></th><td data-label="What must be measured or declared">Maximum hazardous inventory; methane and hydrogen sulphide assumptions; credible fire, explosion, gas-release and containment scenarios; flare, shutdown, emergency access, firewater and operator competence.</td><td data-label="How the planner validates it">Check inventory against vessel and gas-holder capacities; trace scenarios to prevention, detection, isolation and consequence controls; seek competent emergency-service input where appropriate.</td><td data-label="Warning signs / incompleteness triggers">Annual production used instead of maximum inventory; generic risk register; no loss-of-power or flare case; off-site consequences or emergency access omitted.</td></tr>
+        <tr><th scope="row"><span class="assessment-name">10. Alternatives and cumulative effects</span><span class="assessment-basis">Natura in-combination assessment applies in its legal scope; the wider check is an NBCG proposal. [EU-HAB-001; NBCG-APP-001; NBCG-TIER-001]</span></th><td data-label="What must be measured or declared">Site, design and route alternatives; nearby permitted or proposed developments; shared roads, catchments, feedstocks, receptors and land banks.</td><td data-label="How the planner validates it">Check the search area and reasons for rejection; reconcile project lists across assessments; test combined peaks and overlapping source-pathway-receptor effects.</td><td data-label="Warning signs / incompleteness triggers">Alternatives considered after the site was fixed; cumulative list undated; projects excluded without reason; shared land bank, roads or catchment pressures ignored.</td></tr>
+        <tr><th scope="row"><span class="assessment-name">11. Structured engagement</span><span class="assessment-basis">Comparator procedures are route-specific. [IRL-GAP-001; FRA-PUB-001; GER-PUB-001; DEN-PUB-001; NLD-PUB-001; NBCG-ENG-001]</span></th><td data-label="What must be measured or declared">Engagement timing, participants and materials; alternatives, receptors, routes, land bank, monitoring, complaints and emergency information; issues, responses and design changes.</td><td data-label="How the planner validates it">Check engagement occurred before design was fixed; compare disclosed material with the application; trace each material issue to a response or design decision while preserving statutory rights.</td><td data-label="Warning signs / incompleteness triggers">Promotion presented as consultation; key data withheld; engagement after design freeze; no response log; community process treated as replacing statutory participation.</td></tr>
+        <tr><th scope="row"><span class="assessment-name">12. Measurable consent conditions, monitoring, complaints and enforcement</span><span class="assessment-basis">Scientific studies support verification and are not law. [EU-BAT-001; EU-BAT-002; GER-MON-001; GER-WAT-002; DEN-ODO-001; DEN-WAT-001; SCI-MET-001; SCI-MET-002; SCI-MET-003; NBCG-MON-001]</span></th><td data-label="What must be measured or declared">Commissioning tests; operating limits and triggers; independent verification; monitoring frequency and methods; records; non-confidential reporting; complaint and incident handling; correction and escalation.</td><td data-label="How the planner validates it">Map each predicted effect and mitigation to a measurable condition, owner, method, frequency, threshold, reporting route and consequence for failure.</td><td data-label="Warning signs / incompleteness triggers">Conditions rely on vague good practice; no baseline or commissioning gate; self-report only; complaints lack deadlines; raw records unavailable; no correction, escalation or review trigger.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="tool-label">NBCG PROPOSED TOOL - NOT CURRENT IRISH LAW</p>
+</section>
+
+<section id="policy-option" aria-labelledby="option-heading">
+  <h2 id="option-heading">Minimum siting floor as an option to test</h2>
+  <div class="caution-box">
+    <span class="badge option">Comparator-informed policy option</span>
+    <p>Ask the project team to evaluate a 300 m minimum from the nearest relevant potentially odorous, noisy or hazardous component to an existing or permitted dwelling on a separate property, and 500 m to schools, hospitals, nursing homes, childcare facilities, settlements or other high-sensitivity receptors. Evaluate 500 m to dwellings where routine reception, bunkers, digestate post-treatment or storage is open. [NBCG-SITE-001]</p>
+    <p>This is not current Irish law, not a scientifically proven safe distance and not sufficient without site-specific odour, noise, air, water, habitats and process-safety assessment. Greater distance must remain available where evidence requires it.</p>
+  </div>
+  <details class="evidence-disclosure"><summary>Detailed comparator basis</summary><div>
+  <div class="table-wrap">
+    <table>
+      <caption>Comparator basis, with different legal scope</caption>
+      <thead><tr><th scope="col">Comparator</th><th scope="col">Number</th><th scope="col">Character</th><th scope="col">Measurement and caution</th></tr></thead>
+      <tbody>
+        <tr><th scope="row">France</th><td>200 m</td><td>Mandatory authorisation-regime floor to specified dwellings and traveller sites [FRA-SET-001]</td><td>From the installation excluding raw-plant-only storage; other listed receptors use studies [FRA-SET-002]</td></tr>
+        <tr><th scope="row">Germany</th><td>300 m / 500 m</td><td>Official administrative rule for relevant industrial biological treatment [GER-SET-001]</td><td>500 m for specified open facilities; separate agricultural provision differs</td></tr>
+        <tr><th scope="row">Ontario</th><td>200 m / 450 m</td><td>Official rural and agricultural planning guidance [ONT-SET-001; ONT-SET-002]</td><td>Broad installation definition includes storage, loading, flare and separators [ONT-DEF-001]</td></tr>
+      </tbody>
+    </table>
+  </div>
+  </div></details>
+  <details class="evidence-disclosure"><summary>Evidence and sources</summary><div><p>Sources: <a href="https://aida.ineris.fr/reglementation/arrete-101109-fixant-regles-techniques-auxquelles-doivent-satisfaire-installations">https://aida.ineris.fr/reglementation/arrete-101109-fixant-regles-techniques-auxquelles-doivent-satisfaire-installations</a> ; <a href="https://www.verwaltungsvorschriften-im-internet.de/bsvwvbund_18082021_IGI25025005.htm">https://www.verwaltungsvorschriften-im-internet.de/bsvwvbund_18082021_IGI25025005.htm</a> ; <a href="https://www.ontario.ca/files/2022-03/omafra-minimum-distance-separation-pub-853-en-2020-03-28.pdf">https://www.ontario.ca/files/2022-03/omafra-minimum-distance-separation-pub-853-en-2020-03-28.pdf</a></p></div></details>
+</section>
+
+<section id="recommendations" aria-labelledby="recommendations-heading">
+  <h2 id="recommendations-heading">Ten precise recommendations</h2>
+  <p class="section-intro">If the framework is the shape of the solution, these are the specific, checkable asks the group puts forward.</p>
+  <div class="recommendation-grid">
+    <article class="recommendation-card"><h3>1. Proportionate tiers</h3><p>Universal baseline, enhanced risk tier and industrial or cumulative tier. No feedstock-label bypass. [NBCG-TIER-001]</p></article>
+    <article class="recommendation-card"><h3>2. Application schedule</h3><p>Fixed project envelope, receptors, balances, traffic, land bank, effects, containment, safety, alternatives and monitoring. [NBCG-APP-001]</p></article>
+    <article class="recommendation-card"><h3>3. Defined siting option</h3><p>Evaluate 300 m and 500 m floors with component and receptor definitions, plus assessment and power to require more. [NBCG-SITE-001]</p></article>
+    <article class="recommendation-card"><h3>4. Odour, air and noise</h3><p>Complete inventory, prevention, enclosure, local modelling, commissioning, routine checks, complaints and correction. [NBCG-ODO-001]</p></article>
+    <article class="recommendation-card"><h3>5. Traffic reconciliation</h3><p>Mass-balanced annual and peak traffic, all routes, cumulative projects and enforceable limits. [NBCG-TRA-001]</p></article>
+    <article class="recommendation-card"><h3>6. Digestate and water</h3><p>Covered storage, lawful parcel-level land bank, nitrogen and phosphorus balance, catchment effects, records and audit. [NBCG-DIG-001]</p></article>
+    <article class="recommendation-card"><h3>7. Process safety</h3><p>Gas inventory, fire, explosion, hydrogen sulphide, containment, firewater, emergency response and competence. [NBCG-SAF-001]</p></article>
+    <article class="recommendation-card"><h3>8. Monitoring and enforcement</h3><p>Commissioning, independent verification, public non-confidential data, incidents, complaints, raw records and escalation. [NBCG-MON-001]</p></article>
+    <article class="recommendation-card"><h3>9. Early engagement</h3><p>Engage before design is fixed, disclose alternatives and publish a response and design-change record. [NBCG-ENG-001]</p></article>
+    <article class="recommendation-card"><h3>10. One controlled record</h3><p>Shared dataset and responsibility map across relevant authorities, with each legal role preserved. [NBCG-COORD-001]</p></article>
+  </div>
+</section>
+
+<section id="cases" aria-labelledby="cases-heading">
+  <h2 id="cases-heading">Irish process lessons - illustrative, not precedents</h2>
+  <p>Both proposals had a maximum annual intake of 90,000 tonnes, but their processes, outputs, traffic, sites and local procedures differed. Status was checked on 30 August 2026.</p>
+  <div class="case-grid">
+    <article class="case-card"><h3>Corracunna, County Cork</h3><span class="badge fact">Confirmed record</span><p>The local authority notified a decision to grant with 57 conditions after a 33-item further-information process. A third-party appeal remained live. [CASE-CORR-001]</p><details class="evidence-disclosure"><summary>Evidence and sources</summary><div><p><a href="https://www.pleanala.ie/en-ie/case/500541">https://www.pleanala.ie/en-ie/case/500541</a></p></div></details></article>
+    <article class="case-card"><h3>Cappanihane, County Limerick</h3><span class="badge fact">Confirmed record</span><p>The local authority refused on five grounds without a formal further-information request. The applicant's appeal remained undecided. [CASE-LIM-001]</p><details class="evidence-disclosure"><summary>Evidence and sources</summary><div><p><a href="https://www.pleanala.ie/en-ie/case/322745">https://www.pleanala.ie/en-ie/case/322745</a></p></div></details></article>
+  </div>
+  <div class="caution-box"><strong>Evidence boundary:</strong> both appeals were live at the checked date. These cases are illustrations for process design, not precedents, a judgement on either application or a relitigation of either case. The records show contrasts but do not prove causation, legal error or that further information or conditions would have cured a refusal ground. [CASE-COMP-001; CASE-COMP-002]</div>
+  <div class="case-lessons">
+    <article class="case-lesson" id="case-lesson-project">
+      <h3>Lesson 1 - define the whole project</h3>
+      <dl class="lesson-fields">
+        <div><dt>Observed issue</dt><dd><span class="badge fact">Confirmed record</span> The two 90,000 t/year proposals had different processes, outputs, traffic, sites and local procedures. [CASE-CORR-001; CASE-LIM-001; CASE-COMP-001]</dd></div>
+        <div><dt>Why it matters</dt><dd><span class="badge inference">Inference</span> Annual throughput alone cannot describe the planning envelope.</dd></div>
+        <div><dt>Relevant international comparator</dt><dd><span class="badge fact">Scoped comparator</span> Denmark's J205 route requires a detailed AD-specific application schedule where it applies. [DEN-APP-001]</dd></div>
+        <div><dt>Proposed Irish safeguard</dt><dd><span class="badge recommendation">NBCG proposal</span> Proportionate classification and a fixed application envelope. [NBCG-TIER-001; NBCG-APP-001]</dd></div>
+      </dl>
+    </article>
+    <article class="case-lesson" id="case-lesson-receptors">
+      <h3>Lesson 2 - make receptor measurements comparable</h3>
+      <dl class="lesson-fields">
+        <div><dt>Observed issue</dt><dd><span class="badge fact">Confirmed record</span> The records used boundary, source, stack and receptor measurements that were not established as equivalent, and the authorities treated the submitted odour evidence differently. [CASE-COMP-001]</dd></div>
+        <div><dt>Why it matters</dt><dd><span class="badge inference">Inference</span> A bare distance or model headline cannot be compared without source and measurement definitions. This does not imply that distance caused either outcome or that model inputs were equivalent.</dd></div>
+        <div><dt>Relevant international comparator</dt><dd><span class="badge fact">Scoped comparators</span> Ontario defines multiple AD components in its MDS scope; France and Germany specify odour and air controls in their stated routes. [ONT-DEF-001; FRA-ODO-001; GER-AIR-001]</dd></div>
+        <div><dt>Proposed Irish safeguard</dt><dd><span class="badge recommendation">NBCG proposal</span> A certified whole-installation receptor schedule and common odour evidence protocol. [NBCG-SITE-001; NBCG-ODO-001]</dd></div>
+      </dl>
+    </article>
+    <article class="case-lesson" id="case-lesson-roads">
+      <h3>Lesson 3 - resolve road feasibility at consent stage</h3>
+      <dl class="lesson-fields">
+        <div><dt>Observed issue</dt><dd><span class="badge fact">Confirmed record</span> Cork used further information and later conditions while a statutory junction-design concern remained; Limerick treated road feasibility as unresolved at consent stage. [CASE-CORR-001; CASE-LIM-001; CASE-COMP-001]</dd></div>
+        <div><dt>Why it matters</dt><dd><span class="badge inference">Inference</span> Route geometry, land control and capacity can determine whether the proposed use can function. This does not conclude that either treatment was legally wrong.</dd></div>
+        <div><dt>Relevant international comparator</dt><dd><span class="badge fact">Scoped comparator and gaps</span> Denmark's J205 schedule requires transport disclosure in scope. No national AD-specific traffic threshold was verified for France, Germany, the Netherlands or Ontario. [DEN-APP-001; FRA-TRA-001; GER-TRA-001; NLD-TRA-001; ONT-TRA-001]</dd></div>
+        <div><dt>Proposed Irish safeguard</dt><dd><span class="badge recommendation">NBCG proposal</span> Consent-stage mass balance, route geometry, land control, capacity and enforceable movement evidence. [NBCG-TRA-001]</dd></div>
+      </dl>
+    </article>
+    <article class="case-lesson" id="case-lesson-water">
+      <h3>Lesson 4 - reconcile water, digestate and land bank</h3>
+      <dl class="lesson-fields">
+        <div><dt>Observed issue</dt><dd><span class="badge fact">Confirmed record</span> The records show different process outputs and different handling of water and drainage detail. The reviewed public land-bank material had an auditability limit. That is a limitation of this review, not an authority finding of equivalent deficiencies. [CASE-COMP-001]</dd></div>
+        <div><dt>Why it matters</dt><dd><span class="badge inference">Inference</span> Water, digestate, traffic and land-bank effects depend on one reconciled whole-project balance.</dd></div>
+        <div><dt>Relevant international comparator</dt><dd><span class="badge fact">Scoped comparators</span> France, Germany and Denmark provide route-specific containment and water controls; France, Denmark and Northern Ireland provide digestate or nutrient controls in scope. [FRA-WAT-002; GER-WAT-001; GER-WAT-002; DEN-WAT-001; FRA-DIG-001; DEN-DIG-001; NIR-WAT-001]</dd></div>
+        <div><dt>Proposed Irish safeguard</dt><dd><span class="badge recommendation">NBCG proposal</span> Reconciled balances, land-bank evidence, drainage, containment and accident response. [NBCG-DIG-001; NBCG-SAF-001]</dd></div>
+      </dl>
+    </article>
+    <article class="case-lesson" id="case-lesson-decisions">
+      <h3>Lesson 5 - publish a reproducible decision record</h3>
+      <dl class="lesson-fields">
+        <div><dt>Observed issue</dt><dd><span class="badge fact">Confirmed record</span> Cork issued 33 further-information items and 57 conditions; Limerick refused on five grounds without formal further information. [CASE-CORR-001; CASE-LIM-001]</dd></div>
+        <div><dt>Why it matters</dt><dd><span class="badge inference">Inference</span> Readers need a reproducible record of what was resolved, refused or deferred. The contrast does not prove causation, legal error or that further information or conditions would have cured refusal grounds. [CASE-COMP-002]</dd></div>
+        <div><dt>Relevant international comparator</dt><dd><span class="badge fact">Scoped comparators</span> Denmark's schedule, odour commissioning and containment checks, and German monitoring controls illustrate specified evidence and verification in their stated routes. [DEN-APP-001; DEN-ODO-001; DEN-WAT-001; GER-MON-001]</dd></div>
+        <div><dt>Proposed Irish safeguard</dt><dd><span class="badge recommendation">NBCG proposal</span> A completeness gate and one controlled decision record. [NBCG-APP-001; NBCG-COORD-001]</dd></div>
+      </dl>
+    </article>
+  </div>
+</section>
+
+<section id="annex" aria-labelledby="annex-heading">
+  <h2 id="annex-heading">Secondary comparator annex</h2>
+  <details><summary>England - evidence and sources</summary><div><span class="badge fact">Confirmed fact</span><p>The 100 t/day threshold applies where anaerobic digestion is the only waste treatment. Its waste and Industrial Emissions Directive applicability remains conditional on feedstock, waste or by-product status, treatment purpose and route, and co-located operations. Agricultural rules include digestate water buffers and an official quality protocol. No national fixed plant-to-dwelling or sector-specific traffic threshold was verified. [ENG-REG-001; ENG-WAT-001; ENG-DIG-001; ENG-SET-001; ENG-TRA-001]</p><p><a href="https://www.legislation.gov.uk/uksi/2016/1154/schedule/1/made">https://www.legislation.gov.uk/uksi/2016/1154/schedule/1/made</a><br><a href="https://www.legislation.gov.uk/uksi/2018/151/made">https://www.legislation.gov.uk/uksi/2018/151/made</a><br><a href="https://www.gov.uk/government/publications/quality-protocol-anaerobic-digestate">https://www.gov.uk/government/publications/quality-protocol-anaerobic-digestate</a></p></div></details>
+  <details><summary>Wales - evidence and sources</summary><div><span class="badge fact">Confirmed fact</span><p>Wales shares the 100 t/day industrial threshold. Its waste and Industrial Emissions Directive applicability remains conditional on feedstock, waste or by-product status, treatment purpose and route, and co-located operations. Territory-wide agricultural pollution controls cover nutrient limits, risk maps, storage and water buffers. No national fixed plant-to-home or sector-specific traffic threshold was verified. [WAL-REG-001; WAL-WAT-001; WAL-SET-001; WAL-TRA-001]</p><p><a href="https://www.legislation.gov.uk/uksi/2016/1154/schedule/1/made">https://www.legislation.gov.uk/uksi/2016/1154/schedule/1/made</a><br><a href="https://www.legislation.gov.uk/wsi/2021/77/made">https://www.legislation.gov.uk/wsi/2021/77/made</a></p></div></details>
+  <details><summary>Scotland - evidence and sources</summary><div><span class="badge fact">Confirmed fact</span><p>Scotland uses 50, 75 and 100 t/day categories. Their waste and Industrial Emissions Directive applicability remains conditional on feedstock, waste or by-product status, treatment purpose and route, and co-located operations. Controlled-activity rules address water and fertiliser. No national fixed plant-to-home or sector-specific traffic threshold was verified. Environmental-impact classification and likely effects require checking. [SCO-REG-001; SCO-WAT-001; SCO-EIA-001; SCO-SET-001; SCO-TRA-001]</p><p><a href="https://www.legislation.gov.uk/ssi/2012/360/schedule/1/made">https://www.legislation.gov.uk/ssi/2012/360/schedule/1/made</a><br><a href="https://www.legislation.gov.uk/ssi/2011/209/schedule/3/made">https://www.legislation.gov.uk/ssi/2011/209/schedule/3/made</a></p></div></details>
+  <details><summary>Northern Ireland - evidence and sources</summary><div><span class="badge fact">Confirmed fact</span><p>Northern Ireland uses 50, 75 and 100 t/day industrial categories. Their waste and Industrial Emissions Directive applicability remains conditional on feedstock, waste or by-product status, treatment purpose and route, and co-located operations. The Nutrient Action Programme expressly regulates digestate analysis, fertilisation planning, low-emission spreading, water buffers, storage and records. No national fixed plant-to-home or sector-specific traffic threshold was verified. [NIR-REG-001; NIR-WAT-001; NIR-STO-001; NIR-SET-001; NIR-TRA-001]</p><p><a href="https://www.legislation.gov.uk/nisr/2013/160/schedule/1/made">https://www.legislation.gov.uk/nisr/2013/160/schedule/1/made</a><br><a href="https://www.legislation.gov.uk/nisr/2019/81/made">https://www.legislation.gov.uk/nisr/2019/81/made</a></p></div></details>
+  <details><summary>New Zealand - evidence and sources</summary><div><span class="badge fact">Confirmed fact</span><p>New Zealand uses national resource-management and discharge law with regional and district implementation rather than an EU-style tonnage trigger. Waikato provides an effects-based boundary odour example and specified farm-effluent controls. No national fixed plant-to-dwelling or sector-specific traffic threshold was verified. The official whole-Act portal did not render fully in the audit and local plans can add requirements. [NZ-RMA-001; NZ-DIS-001; NZ-FRE-001; NZ-WAI-001; NZ-WAI-002; NZ-SET-001; NZ-TRA-001]</p><p><a href="https://environment.govt.nz/acts-and-regulations/acts/resource-management-act-1991/">https://environment.govt.nz/acts-and-regulations/acts/resource-management-act-1991/</a><br><a href="https://www.legislation.govt.nz/act/public/1991/0069/latest/whole.html">https://www.legislation.govt.nz/act/public/1991/0069/latest/whole.html</a><br><a href="https://www.waikatoregion.govt.nz/council/policy-and-plans/regional-plan">https://www.waikatoregion.govt.nz/council/policy-and-plans/regional-plan</a></p></div></details>
+</section>
+
+<section id="limitations" aria-labelledby="limitations-heading">
+  <h2 id="limitations-heading">Caveats and evidence limits</h2>
+  <ul>
+    <li>Official law and guidance can change after the evidence review date.</li>
+    <li>Foreign legal terms and translations require original-language checking before provision-level reliance.</li>
+    <li>Waste and Industrial Emissions Directive routes depend on feedstock, waste or by-product status, treatment purpose and route, and co-located operations, not tonnage alone.</li>
+    <li>No transferable peer-reviewed universal setback, traffic threshold or noise threshold was identified. [SCI-GAP-001]</li>
+  </ul>
+  <details class="evidence-disclosure"><summary>Detailed caveat and evidence limits</summary><div><ul>
+    <li>Denmark's full traffic, Natura, major-accident, enforcement and public-data review is incomplete. Further research required. [DEN-GAP-001]</li>
+    <li>Several Dutch national digestate, water, process-emission, accident, monitoring and enforcement topics remain incomplete. Further research required. [NLD-GAP-001]</li>
+    <li>The New Zealand official whole-Act portal had an extraction limitation during the audit.</li>
+    <li>Scientific studies support source inventories and verification, not universal emission factors or distances.</li>
+    <li>The Irish cases were live appeals at the stated check date and are not final precedent.</li>
+    <li>This page provides policy information, not legal advice or a case-specific planning assessment.</li>
+  </ul></div></details>
+</section>
+
+<section id="sources" aria-labelledby="sources-heading">
+  <h2 id="sources-heading">Official and peer-reviewed source index</h2>
+  <p class="section-intro">Open the full index to inspect every official and peer-reviewed source retained in this portable page.</p>
+  <details class="evidence-disclosure"><summary>Full source index - evidence and sources</summary><div><ol class="source-index">
+    <li><strong>EU-IED-001:</strong> <a href="https://eur-lex.europa.eu/eli/dir/2010/75/2024-08-04/eng">https://eur-lex.europa.eu/eli/dir/2010/75/2024-08-04/eng</a></li>
+    <li><strong>EU-IED-001 Irish schedule:</strong> <a href="https://revisedacts.lawreform.ie/eli/1992/act/7/schedule/1/revised/en/html">https://revisedacts.lawreform.ie/eli/1992/act/7/schedule/1/revised/en/html</a></li>
+    <li><strong>EU-BAT-001; EU-BAT-002:</strong> <a href="https://eur-lex.europa.eu/eli/dec_impl/2018/1147/oj/eng">https://eur-lex.europa.eu/eli/dec_impl/2018/1147/oj/eng</a></li>
+    <li><strong>EU-WFD-001:</strong> <a href="https://eur-lex.europa.eu/eli/dir/2000/60/2014-11-20/eng">https://eur-lex.europa.eu/eli/dir/2000/60/2014-11-20/eng</a></li>
+    <li><strong>EU-NIT-001:</strong> <a href="https://eur-lex.europa.eu/eli/dir/1991/676/2008-12-11/eng">https://eur-lex.europa.eu/eli/dir/1991/676/2008-12-11/eng</a></li>
+    <li><strong>EU-HAB-001:</strong> <a href="https://eur-lex.europa.eu/eli/dir/1992/43/2013-07-01/eng">https://eur-lex.europa.eu/eli/dir/1992/43/2013-07-01/eng</a></li>
+    <li><strong>EU-SEV-001:</strong> <a href="https://eur-lex.europa.eu/eli/dir/2012/18/2012-08-13/eng">https://eur-lex.europa.eu/eli/dir/2012/18/2012-08-13/eng</a></li>
+    <li><strong>IRL-WAT-001:</strong> <a href="https://www.irishstatutebook.ie/eli/2022/si/113/made/en/print">https://www.irishstatutebook.ie/eli/2022/si/113/made/en/print</a></li>
+    <li><strong>IRL-GAP-001:</strong> <a href="https://data.oireachtas.ie/ie/oireachtas/committee/dail/34/joint_committee_on_agriculture_and_food/reports/2026/2026-06-30_report-on-anaerobic-digestion_en.pdf">https://data.oireachtas.ie/ie/oireachtas/committee/dail/34/joint_committee_on_agriculture_and_food/reports/2026/2026-06-30_report-on-anaerobic-digestion_en.pdf</a></li>
+    <li><strong>FRA-REG-001:</strong> <a href="https://aida.ineris.fr/reglementation/2781-installation-methanisation-dechets-non-dangereux-matiere-vegetale-brute-a">https://aida.ineris.fr/reglementation/2781-installation-methanisation-dechets-non-dangereux-matiere-vegetale-brute-a</a></li>
+    <li><strong>France technical order:</strong> <a href="https://aida.ineris.fr/reglementation/arrete-101109-fixant-regles-techniques-auxquelles-doivent-satisfaire-installations">https://aida.ineris.fr/reglementation/arrete-101109-fixant-regles-techniques-auxquelles-doivent-satisfaire-installations</a></li>
+    <li><strong>FRA-PUB-001:</strong> <a href="https://www.ecologie.gouv.fr/politiques-publiques/lautorisation-environnementale">https://www.ecologie.gouv.fr/politiques-publiques/lautorisation-environnementale</a></li>
+    <li><strong>GER-REG-001:</strong> <a href="https://www.gesetze-im-internet.de/bimschv_4_2013/anhang_1.html">https://www.gesetze-im-internet.de/bimschv_4_2013/anhang_1.html</a></li>
+    <li><strong>GER-SET-001; GER-AIR-001; GER-MON-001:</strong> <a href="https://www.verwaltungsvorschriften-im-internet.de/bsvwvbund_18082021_IGI25025005.htm">https://www.verwaltungsvorschriften-im-internet.de/bsvwvbund_18082021_IGI25025005.htm</a></li>
+    <li><strong>GER-WAT-001:</strong> <a href="https://www.gesetze-im-internet.de/awsv/__37.html">https://www.gesetze-im-internet.de/awsv/__37.html</a></li>
+    <li><strong>GER-WAT-002:</strong> <a href="https://www.gesetze-im-internet.de/awsv/anlage_7.html">https://www.gesetze-im-internet.de/awsv/anlage_7.html</a></li>
+    <li><strong>GER-PUB-001:</strong> <a href="https://www.gesetze-im-internet.de/bimschg/__10.html">https://www.gesetze-im-internet.de/bimschg/__10.html</a></li>
+    <li><strong>DEN-REG-001; DEN-IED-001:</strong> <a href="https://www.retsinformation.dk/eli/lta/2024/1027">https://www.retsinformation.dk/eli/lta/2024/1027</a></li>
+    <li><strong>DEN-SET-001; DEN-SET-002:</strong> <a href="https://www.retsinformation.dk/eli/lta/2025/1065">https://www.retsinformation.dk/eli/lta/2025/1065</a></li>
+    <li><strong>DEN-APP-001; DEN-ODO-001; DEN-WAT-001:</strong> <a href="https://www.retsinformation.dk/eli/lta/2021/2079">https://www.retsinformation.dk/eli/lta/2021/2079</a></li>
+    <li><strong>NLD-REG-001:</strong> <a href="https://wetten.overheid.nl/BWBR0041330/2026-01-01/0/Hoofdstuk3/Afdeling3.6/Paragraaf3.6.8/">https://wetten.overheid.nl/BWBR0041330/2026-01-01/0/Hoofdstuk3/Afdeling3.6/Paragraaf3.6.8/</a></li>
+    <li><strong>NLD-SET-001:</strong> <a href="https://wetten.overheid.nl/BWBR0041313/2026-01-01/0/Hoofdstuk5/Afdeling5.1/Paragraaf5.1.4/Artikel5.120/">https://wetten.overheid.nl/BWBR0041313/2026-01-01/0/Hoofdstuk5/Afdeling5.1/Paragraaf5.1.4/Artikel5.120/</a></li>
+    <li><strong>NLD-SAF-001:</strong> <a href="https://iplo.nl/regelgeving/regels-voor-activiteiten/mestvergistingsinstallatie/regels-veiligheid/">https://iplo.nl/regelgeving/regels-voor-activiteiten/mestvergistingsinstallatie/regels-veiligheid/</a></li>
+    <li><strong>NLD-NAT-001:</strong> <a href="https://wetten.overheid.nl/BWBR0041313/2026-01-01/0/Hoofdstuk8/Afdeling8.6/Paragraaf8.6.1/Artikel8.74b/">https://wetten.overheid.nl/BWBR0041313/2026-01-01/0/Hoofdstuk8/Afdeling8.6/Paragraaf8.6.1/Artikel8.74b/</a></li>
+    <li><strong>ONT-SET-001:</strong> <a href="https://www.ontario.ca/page/publication-853-minimum-distance-separation-mds-document">https://www.ontario.ca/page/publication-853-minimum-distance-separation-mds-document</a></li>
+    <li><strong>ONT-SET-002; ONT-DEF-001:</strong> <a href="https://www.ontario.ca/files/2022-03/omafra-minimum-distance-separation-pub-853-en-2020-03-28.pdf">https://www.ontario.ca/files/2022-03/omafra-minimum-distance-separation-pub-853-en-2020-03-28.pdf</a></li>
+    <li><strong>ONT-ECA-001:</strong> <a href="https://www.ontario.ca/page/environmental-compliance-approval">https://www.ontario.ca/page/environmental-compliance-approval</a></li>
+    <li><strong>DEN-STO-001:</strong> <a href="https://www.retsinformation.dk/eli/lta/2021/2243">https://www.retsinformation.dk/eli/lta/2021/2243</a></li>
+    <li><strong>DEN-PUB-001:</strong> <a href="https://www.retsinformation.dk/eli/lta/2023/4">https://www.retsinformation.dk/eli/lta/2023/4</a></li>
+    <li><strong>GER-EIA-001:</strong> <a href="https://www.gesetze-im-internet.de/uvpg/anlage_1.html">https://www.gesetze-im-internet.de/uvpg/anlage_1.html</a></li>
+    <li><strong>IRL-ABP-001:</strong> <a href="https://assets.gov.ie/78885/64bc3eef-31d5-4c29-8fc8-9ec1141f94e6.pdf">https://assets.gov.ie/78885/64bc3eef-31d5-4c29-8fc8-9ec1141f94e6.pdf</a></li>
+    <li><strong>NLD-EIA-001:</strong> <a href="https://iplo.nl/thema/toepassing-regels-praktijk/veehouderijen/mestbehandeling-milieueffectrapportage/">https://iplo.nl/thema/toepassing-regels-praktijk/veehouderijen/mestbehandeling-milieueffectrapportage/</a></li>
+    <li><strong>NLD-IPPC-001:</strong> <a href="https://iplo.nl/thema/toepassing-regels-praktijk/veehouderijen/covergisten-mest/welke-regels-gelden-covergisten/">https://iplo.nl/thema/toepassing-regels-praktijk/veehouderijen/covergisten-mest/welke-regels-gelden-covergisten/</a></li>
+    <li><strong>NLD-NAT-002:</strong> <a href="https://wetten.overheid.nl/BWBR0045528/2026-01-01/0/Hoofdstuk4/Afdeling4.5/Artikel4.15/">https://wetten.overheid.nl/BWBR0045528/2026-01-01/0/Hoofdstuk4/Afdeling4.5/Artikel4.15/</a></li>
+    <li><strong>NLD-ODO-001:</strong> <a href="https://wetten.overheid.nl/BWBR0041313/2026-01-01/0/Hoofdstuk5/Afdeling5.1/Paragraaf5.1.4/Artikel5.92/">https://wetten.overheid.nl/BWBR0041313/2026-01-01/0/Hoofdstuk5/Afdeling5.1/Paragraaf5.1.4/Artikel5.92/</a></li>
+    <li><strong>NLD-PUB-001:</strong> <a href="https://wetten.overheid.nl/BWBR0005537/2024-01-01/0/Hoofdstuk3/Afdeling3.4/Artikel3.16/">https://wetten.overheid.nl/BWBR0005537/2024-01-01/0/Hoofdstuk3/Afdeling3.4/Artikel3.16/</a></li>
+    <li><strong>NLD-SAF-002:</strong> <a href="https://www.rivm.nl/documenten/effect-en-risicoafstanden-bij-opslag-van-biogas">https://www.rivm.nl/documenten/effect-en-risicoafstanden-bij-opslag-van-biogas</a></li>
+    <li><strong>NZ-FRE-001:</strong> <a href="https://environment.govt.nz/acts-and-regulations/regulations/national-environmental-standards-for-freshwater/">https://environment.govt.nz/acts-and-regulations/regulations/national-environmental-standards-for-freshwater/</a></li>
+    <li><strong>NZ-SET-001; NZ-WAI-001; NZ-WAI-002:</strong> <a href="https://www.waikatoregion.govt.nz/environment/farmers-hub/effluent-management">https://www.waikatoregion.govt.nz/environment/farmers-hub/effluent-management</a></li>
+    <li><strong>ONT-ODO-001:</strong> <a href="https://www.ontario.ca/page/odour-guidance-farm-anaerobic-digestion">https://www.ontario.ca/page/odour-guidance-farm-anaerobic-digestion</a></li>
+    <li><strong>ONT-REG-001:</strong> <a href="https://www.ontario.ca/document/regulatory-requirements-regulated-mixed-anaerobic-digestion-facilities">https://www.ontario.ca/document/regulatory-requirements-regulated-mixed-anaerobic-digestion-facilities</a></li>
+    <li><strong>SCO-EIA-001:</strong> <a href="https://www.legislation.gov.uk/ssi/2017/102/schedule/2/made">https://www.legislation.gov.uk/ssi/2017/102/schedule/2/made</a></li>
+    <li><strong>CASE-CORR-001:</strong> <a href="https://www.pleanala.ie/en-ie/case/500541">https://www.pleanala.ie/en-ie/case/500541</a></li>
+    <li><strong>CASE-LIM-001:</strong> <a href="https://www.pleanala.ie/en-ie/case/322745">https://www.pleanala.ie/en-ie/case/322745</a></li>
+  </ol></div></details>
+</section>
+</main>
+<footer>
+  <p><strong>National Biogas Concern Group</strong></p>
+  <p>Prepared 5 October 2026 | Evidence reviewed 31 August 2026</p>
+  <p>Policy information - not legal advice.</p>
+</footer>
+<script>
+(function () {
+  'use strict';
+
+  const comparisonTool = document.getElementById('comparison-tool');
+  const completeComparison = document.getElementById('complete-comparison');
+  const comparisonMatrix = completeComparison.querySelector('.matrix');
+  const countryA = document.getElementById('country-a');
+  const countryB = document.getElementById('country-b');
+  const comparisonStatus = document.getElementById('comparison-status');
+  const selectedComparison = document.getElementById('selected-comparison');
+  const comparisonTopics = [
+    { label: 'Site suitability / receptor protection', column: 1 },
+    { label: 'Application evidence', column: 2 },
+    { label: 'Odour / air', column: 3 },
+    { label: 'Traffic / transport', column: 6 },
+    { label: 'Digestate / water', column: 4 },
+    { label: 'Gas / accident safety', column: 5 },
+    { label: 'Participation', column: 7 },
+    { label: 'Monitoring / enforcement', column: 8 }
+  ];
+
+  function matrixRow(country) {
+    return Array.from(comparisonMatrix.tBodies[0].rows).find(function (row) {
+      return row.cells[0].textContent.trim() === country;
+    });
+  }
+
+  function renderComparison() {
+    const first = countryA.value;
+    const second = countryB.value;
+    selectedComparison.replaceChildren();
+    if (first === second) {
+      comparisonStatus.textContent = 'Choose two different jurisdictions to compare them.';
+      return;
+    }
+    const firstRow = matrixRow(first);
+    const secondRow = matrixRow(second);
+    comparisonTopics.forEach(function (topic) {
+      const article = document.createElement('article');
+      article.className = 'comparison-topic';
+      const heading = document.createElement('h3');
+      heading.textContent = topic.label;
+      const pair = document.createElement('div');
+      pair.className = 'comparison-pair';
+      [
+        { name: first, cell: firstRow.cells[topic.column] },
+        { name: second, cell: secondRow.cells[topic.column] }
+      ].forEach(function (entry) {
+        const card = document.createElement('div');
+        card.className = 'comparison-country';
+        const name = document.createElement('h4');
+        name.textContent = entry.name;
+        card.append(name);
+        Array.from(entry.cell.childNodes).forEach(function (node) {
+          card.append(node.cloneNode(true));
+        });
+        pair.append(card);
+      });
+      article.append(heading, pair);
+      selectedComparison.append(article);
+    });
+    comparisonStatus.textContent = 'Showing ' + first + ' and ' + second + ' across eight protection topics.';
+  }
+
+  countryA.addEventListener('change', renderComparison);
+  countryB.addEventListener('change', renderComparison);
+  comparisonTool.hidden = false;
+  completeComparison.open = false;
+  renderComparison();
+
+  const panel = document.getElementById('filter-panel');
+  const cards = Array.from(document.querySelectorAll('.evidence-card'));
+  const jurisdictionButtons = Array.from(document.querySelectorAll('[data-filter-jurisdiction]'));
+  const topicButtons = Array.from(document.querySelectorAll('[data-filter-topic]'));
+  const reset = document.getElementById('reset-filters');
+  const result = document.getElementById('result-count');
+  let jurisdiction = 'all';
+  let topic = 'all';
+
+  function tokens(value) {
+    return (value || '').split(/\s+/).filter(Boolean);
+  }
+
+  function matches(card) {
+    const jurisdictionMatch = jurisdiction === 'all' || tokens(card.dataset.jurisdiction).includes(jurisdiction);
+    const topicMatch = topic === 'all' || tokens(card.dataset.topic).includes(topic);
+    return jurisdictionMatch && topicMatch;
+  }
+
+  function updateButtons(buttons, attribute, value) {
+    buttons.forEach(function (button) {
+      button.setAttribute('aria-pressed', String(button.getAttribute(attribute) === value));
+    });
+  }
+
+  function applyFilters() {
+    let shown = 0;
+    cards.forEach(function (card) {
+      const visible = matches(card);
+      card.hidden = !visible;
+      if (visible) shown += 1;
+    });
+    updateButtons(jurisdictionButtons, 'data-filter-jurisdiction', jurisdiction);
+    updateButtons(topicButtons, 'data-filter-topic', topic);
+    const jurisdictionText = jurisdiction === 'all' ? 'all jurisdictions' : jurisdiction;
+    const topicText = topic === 'all' ? 'all issues' : topic;
+    result.textContent = 'Showing ' + shown + ' of ' + cards.length + ' evidence cards for ' + jurisdictionText + ' and ' + topicText + '.';
+  }
+
+  jurisdictionButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      jurisdiction = button.dataset.filterJurisdiction;
+      applyFilters();
+    });
+  });
+  topicButtons.forEach(function (button) {
+    button.addEventListener('click', function () {
+      topic = button.dataset.filterTopic;
+      applyFilters();
+    });
+  });
+  reset.addEventListener('click', function () {
+    jurisdiction = 'all';
+    topic = 'all';
+    applyFilters();
+  });
+
+  const parameters = new URLSearchParams(window.location.search);
+  const requestedJurisdiction = parameters.get('jurisdiction');
+  const requestedTopic = parameters.get('topic');
+  if (requestedJurisdiction && jurisdictionButtons.some(function (button) { return button.dataset.filterJurisdiction === requestedJurisdiction; })) {
+    jurisdiction = requestedJurisdiction;
+  }
+  if (requestedTopic && topicButtons.some(function (button) { return button.dataset.filterTopic === requestedTopic; })) {
+    topic = requestedTopic;
+  }
+
+  panel.hidden = false;
+  applyFilters();
+
+  let printState = null;
+  window.addEventListener('beforeprint', function () {
+    printState = cards.map(function (card) { return card.hidden; });
+    cards.forEach(function (card) { card.hidden = false; });
+    document.querySelectorAll('details').forEach(function (item) { item.open = true; });
+  });
+  window.addEventListener('afterprint', function () {
+    if (printState) {
+      cards.forEach(function (card, index) { card.hidden = printState[index]; });
+      printState = null;
+    }
+  });
+})();
+</script>
+</body>
+</html>
