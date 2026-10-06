@@ -67,6 +67,25 @@ p { max-width: 78ch; }
 .roadmap li { margin: 0.45rem 0; max-width: 72ch; }
 .roadmap li strong { color: var(--forest); }
 .section-intro { margin: 0 0 1rem; font-size: 1.05rem; color: var(--muted); font-style: italic; max-width: 76ch; }
+.exec-summary { margin: 1.2rem 0; padding: 1.4rem 1.5rem; border: 1px solid var(--line); border-left: 0.5rem solid var(--forest); border-radius: 0.6rem; background: var(--surface); box-shadow: var(--shadow); }
+.exec-summary h3 { margin: 1.2rem 0 0.4rem; color: var(--forest); font-size: 1.08rem; }
+.exec-summary h3:first-of-type { margin-top: 0.4rem; }
+.exec-summary ol, .exec-summary ul { margin: 0.3rem 0; padding-left: 1.3rem; }
+.exec-summary li { margin: 0.4rem 0; max-width: 74ch; }
+.matrix-wrap { overflow-x: auto; margin: 1rem 0; border: 1px solid var(--line); border-radius: 0.55rem; background: #fff; }
+.matrix { width: 100%; min-width: 60rem; border-collapse: collapse; font-size: 0.88rem; }
+.matrix caption { padding: 0.9rem; text-align: left; font-weight: 800; color: var(--forest); background: #eef6f3; }
+.matrix th, .matrix td { padding: 0.6rem 0.7rem; border: 1px solid #c7d5d0; text-align: left; vertical-align: top; }
+.matrix thead th { background: #dcebe5; color: #173e35; position: sticky; left: auto; }
+.matrix tbody th { background: #f0f6f3; color: #173e35; white-space: nowrap; }
+.matrix tbody tr:nth-child(even) td { background: #f6f9f8; }
+.mx { display: inline-block; font-weight: 800; font-size: 0.82rem; padding: 0.1rem 0.45rem; border-radius: 99rem; border: 1px solid currentColor; }
+.mx-yes { color: #13543f; background: #d8efe2; }
+.mx-part { color: #7a5a12; background: #fdf0c9; }
+.mx-no { color: #7a2e2e; background: #f7ddd9; }
+.matrix td small { display: block; margin-top: 0.25rem; color: var(--muted); font-size: 0.82rem; }
+.matrix-key { margin: 0.6rem 0 0; font-size: 0.9rem; }
+.matrix-key .mx { margin-right: 0.3rem; }
 .status-box, .caution-box, .recommendation-box { margin: 1rem 0; padding: 1rem 1.15rem; border-radius: 0.55rem; border-left: 0.45rem solid var(--forest); background: var(--surface); box-shadow: var(--shadow); }
 .caution-box { border-left-color: var(--gold); background: var(--gold-bg); }
 .recommendation-box { border-left-color: var(--violet); background: var(--violet-bg); }
@@ -176,6 +195,8 @@ footer p { margin: 0.3rem 0; }
 <nav class="page-nav" aria-label="Page sections">
   <ul>
     <li><a href="#start-here">Start here</a></li>
+    <li><a href="#summary">Summary</a></li>
+    <li><a href="#at-a-glance">At a glance</a></li>
     <li><a href="#overview">Overview</a></li>
     <li><a href="#legend">How to read</a></li>
     <li><a href="#worked-example">Worked example</a></li>
@@ -210,6 +231,122 @@ footer p { margin: 0.3rem 0; }
       <li><strong>A proposed Irish framework and recommendations</strong> - a practical, tiered way to close the gap, plus two Irish cases as process lessons.</li>
       <li><strong>Full sources</strong> - every official reference, with links, so the material stands up to scrutiny.</li>
     </ol>
+  </div>
+</section>
+
+<section id="summary" aria-labelledby="summary-heading">
+  <h2 id="summary-heading">Executive summary</h2>
+  <p class="section-intro">The one-page version, for anyone short of time.</p>
+  <div class="exec-summary">
+    <h3>The situation</h3>
+    <p>Ireland is encouraging a large expansion of anaerobic digestion under the National Biomethane Strategy, but has no dedicated national method for deciding where these plants go. There is no common siting starting point, no standard application-evidence schedule and no sector-specific community-engagement requirement. A 2026 Oireachtas committee confirmed this gap and recommended it be closed. The Department has commissioned Arup to prepare non-statutory support guidance for planning authorities, and the National Biogas Concern Group has been invited to contribute.</p>
+
+    <h3>What the international comparison shows</h3>
+    <ol>
+      <li>Other jurisdictions protect communities through a <strong>mix of mechanisms</strong>, not one number: France sets a 200 m dwelling floor, Germany 300 m rising to 500 m for open facilities, Ontario 200 m and 450 m by receptor type, while Denmark and the Netherlands rely more on component distances, detailed application schedules and effects tests.</li>
+      <li>A distance rule is <strong>never used on its own</strong>. It sits alongside odour modelling, containment, monitoring and operating controls. No jurisdiction treats a setback as a guarantee of safety.</li>
+      <li>The <strong>whole installation matters</strong>, not just the digester tank. Ontario's rules expressly include feedstock and digestate stores, loading, flares and separators.</li>
+      <li>Several jurisdictions require a <strong>standard evidence pack</strong> up front. Denmark's application schedule is a clear worked model.</li>
+      <li>Ireland's gap is specifically in <strong>planning method</strong>, not environmental law. Strong EU-derived controls exist, but they are not organised into a consistent, sector-specific siting framework.</li>
+    </ol>
+
+    <h3>What the group proposes</h3>
+    <ul>
+      <li>A <strong>proportionate, tiered national framework</strong> scaling scrutiny to size and risk, with no bypass through feedstock labels.</li>
+      <li>A <strong>standard application-evidence schedule</strong> at industrial scale: project envelope, receptor map, mass and nutrient balances, traffic, water, gas inventory and monitoring.</li>
+      <li>Clear <strong>receptor definitions and measurement from the nearest relevant component</strong>, with a national minimum siting floor offered as a policy option that is always supplemented by site-specific assessment, never a substitute for it.</li>
+      <li>Enforceable <strong>odour, digestate, water, traffic and gas-safety controls</strong>, independent verification, public monitoring and incident disclosure.</li>
+      <li>Early, structured <strong>community engagement</strong> and coordination across the planning, environmental, roads, water, agriculture and safety regulators.</li>
+    </ul>
+
+    <h3>The bottom line</h3>
+    <p>A clear, predictable siting system protects communities and gives responsible developers earlier certainty. The group's aim is a robust framework that gets the right plants into the right places, not a block on all development.</p>
+    <p><span class="badge fact">Confirmed fact</span> <span class="badge option">Policy option</span> <span class="badge recommendation">Group recommendation</span> Each claim in the detail below is labelled and carries an official source. This summary condenses that evidence and introduces no new claims.</p>
+  </div>
+</section>
+
+<section id="at-a-glance" aria-labelledby="glance-heading">
+  <h2 id="glance-heading">At a glance: protections across countries</h2>
+  <p class="section-intro">The fastest way to compare. Each row is a jurisdiction; each column is a protection communities care about. Read it as a map to the detailed, fully sourced cards further down, not as a substitute for them.</p>
+  <div class="matrix-wrap">
+    <table class="matrix">
+      <caption>How each core jurisdiction addresses key protection dimensions</caption>
+      <thead>
+        <tr>
+          <th scope="col">Jurisdiction</th>
+          <th scope="col">National siting distance</th>
+          <th scope="col">Standard application evidence</th>
+          <th scope="col">Odour / air controls</th>
+          <th scope="col">Digestate / water controls</th>
+          <th scope="col">Gas / accident safety</th>
+          <th scope="col">Community participation</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th scope="row">Ireland</th>
+          <td><span class="mx mx-no">No</span><small>No verified sector-specific floor</small></td>
+          <td><span class="mx mx-part">Partial</span><small>General planning / EIA, no AD schedule</small></td>
+          <td><span class="mx mx-part">Partial</span><small>BAT where in scope</small></td>
+          <td><span class="mx mx-part">Partial</span><small>Spreading / nitrates rules, not plant siting</small></td>
+          <td><span class="mx mx-part">Partial</span><small>Major-accident / general rules</small></td>
+          <td><span class="mx mx-part">Partial</span><small>General rights, no AD-specific duty</small></td>
+        </tr>
+        <tr>
+          <th scope="row">France</th>
+          <td><span class="mx mx-yes">Yes</span><small>200 m to dwellings / traveller sites</small></td>
+          <td><span class="mx mx-yes">Yes</span><small>Authorisation dossier</small></td>
+          <td><span class="mx mx-yes">Yes</span><small>Source dossier + odour criterion</small></td>
+          <td><span class="mx mx-yes">Yes</span><small>Containment, firewater, spreading plan</small></td>
+          <td><span class="mx mx-yes">Yes</span><small>Danger study, containment</small></td>
+          <td><span class="mx mx-yes">Yes</span><small>Reformed participation procedure</small></td>
+        </tr>
+        <tr>
+          <th scope="row">Germany</th>
+          <td><span class="mx mx-yes">Yes</span><small>300 m, 500 m for open facilities</small></td>
+          <td><span class="mx mx-yes">Yes</span><small>Formal permit route</small></td>
+          <td><span class="mx mx-yes">Yes</span><small>Enclosure, extraction, gas checks</small></td>
+          <td><span class="mx mx-yes">Yes</span><small>Defined containment controls</small></td>
+          <td><span class="mx mx-yes">Yes</span><small>Alarms, leak surveys, shutdown</small></td>
+          <td><span class="mx mx-yes">Yes</span><small>Permit participation</small></td>
+        </tr>
+        <tr>
+          <th scope="row">Denmark</th>
+          <td><span class="mx mx-part">Partial</span><small>Livestock-component distances only</small></td>
+          <td><span class="mx mx-yes">Yes</span><small>Detailed J205 schedule</small></td>
+          <td><span class="mx mx-yes">Yes</span><small>Commissioning + abatement conditions</small></td>
+          <td><span class="mx mx-yes">Yes</span><small>Impermeability, leak checks, N calc</small></td>
+          <td><span class="mx mx-part">Partial</span><small>Containment conditions; some gaps</small></td>
+          <td><span class="mx mx-part">Partial</span><small>EIA-dependent</small></td>
+        </tr>
+        <tr>
+          <th scope="row">Netherlands</th>
+          <td><span class="mx mx-part">Partial</span><small>Activity tables + 50 m gas distance</small></td>
+          <td><span class="mx mx-part">Partial</span><small>Activity / permit dependent</small></td>
+          <td><span class="mx mx-yes">Yes</span><small>Acceptable-odour duty</small></td>
+          <td><span class="mx mx-part">Partial</span><small>Nature / nitrogen; some gaps</small></td>
+          <td><span class="mx mx-yes">Yes</span><small>Gas-safety distance</small></td>
+          <td><span class="mx mx-part">Partial</span><small>Permit / EIA dependent</small></td>
+        </tr>
+        <tr>
+          <th scope="row">Ontario</th>
+          <td><span class="mx mx-yes">Yes</span><small>200 m / 450 m by receptor type</small></td>
+          <td><span class="mx mx-part">Partial</span><small>Route-dependent approval</small></td>
+          <td><span class="mx mx-yes">Yes</span><small>Engineer odour plan in scope</small></td>
+          <td><span class="mx mx-part">Partial</span><small>Nutrient / ECA controls</small></td>
+          <td><span class="mx mx-part">Partial</span><small>Route-specific controls</small></td>
+          <td><span class="mx mx-part">Partial</span><small>Approval-route dependent</small></td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="matrix-key">
+    <span class="mx mx-yes">Yes</span> a specific, verified mechanism exists in the stated scope.
+    <span class="mx mx-part">Partial</span> addressed by general or conditional rules, or with documented gaps.
+    <span class="mx mx-no">No</span> no sector-specific rule verified.
+  </p>
+  <div class="caution-box">
+    <strong>How to read this honestly:</strong> the labels summarise mechanism type, not quality or outcome. A "Yes" is not proof of a good result, and a "Partial" or "No" does not mean a place is unregulated - Ireland in particular has strong general environmental law. The distinctions, scope and sources are set out in full in the country cards and issue sections below. No distance shown is a scientifically proven safe number.
   </div>
 </section>
 
